@@ -1,0 +1,213 @@
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="renderer" content="webkit">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>危废智能监管平台</title>
+
+    <meta name="description" content="index"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
+
+    <link rel="stylesheet" href="/chosen/chosen.min.css"/>
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/ace/css/ace.min.css" id="main-ace-style"/>
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="/ace/css/ace-part2.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="/ace/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="/ace/css/ace-rtl.min.css"/>
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="/ace/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <link rel="stylesheet" href="/ztree/metro.css"/>
+    <link rel="stylesheet" href="/validate/css/validform.css"/>
+    <link rel="stylesheet" href="/css/custom.css"/>
+
+
+    <!-- ace settings handler -->
+    <script src="/ace/js/ace-extra.min.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+    <script src="/bootstrap/html5shiv.min.js"></script>
+    <script src="/bootstrap/respond.min.js"></script>
+    <script>var ie8 = "ie8";</script>
+    <![endif]-->
+</head>
+
+<body class="no-skin" id="body-content">
+
+<!-- 主体 -->
+<div class="main-container" id="main-container">
+
+    <div class="main-content">
+
+
+        <div class="page-content">
+
+            <div class="page-header">
+                <h1> <{{work.code}}>详情 </h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="fill-main-content" style="height:100%">
+                        <div class="xuboxPageHtml" id="xboxTest" style="overflow-y: auto; height: 932px;">
+                            <link rel="stylesheet" href="/css/work_style.css">
+                            <div class="layer">
+                                <div class="profile-user-info profile-user-info-striped">
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">工单编号</div>
+                                        <div class="profile-info-value">
+                                            <span>{{work.code}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">工单状态</div>
+                                        <div class="profile-info-value">
+                                        <span>
+                                            <font color="red" v-if="work.status==0">待运输</font>
+                                            <font color="green" v-else-if="work.status==1">运输中</font>
+                                            <font color="gray" v-else-if="work.status==2">已结束</font>
+                                        </span>
+                                        </div>
+                                    </div>
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">创建用户</div>
+                                        <div class="profile-info-value">
+			<span>
+				{{work.createUserName}} - {{work.createOfficeName}}&nbsp;&nbsp;&nbsp;{{work.createUserPhone}}
+			</span>
+                                        </div>
+                                    </div>
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">运输用户</div>
+                                        <div class="profile-info-value">
+			<span>
+				{{work.transportUserName}} - {{work.transportOfficeName}}&nbsp;&nbsp;&nbsp;{{work.transportUserPhone}}
+			</span>
+                                        </div>
+                                    </div>
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">处理用户</div>
+                                        <div class="profile-info-value">
+			<span>
+				{{work.recipientUserName}} - {{work.recipientOfficeName}}&nbsp;&nbsp;&nbsp;{{work.recipientUserPhone}}
+			</span>
+                                        </div>
+                                    </div>
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">转运清单</div>
+                                        <div class="profile-info-value">
+                                            <span><b>运输车牌号：{{work.details!=null?work.details[0].plateNumber:''}}</b></span>
+                                            <table class="table table-striped table-bordered table-hover nomargin-bottom">
+                                                <thead>
+                                                <tr>
+                                                    <th class="center">废物名称</th>
+                                                    <th class="center">类别编号</th>
+                                                    <th class="center">主害成份</th>
+                                                    <th class="center">重量(吨)</th>
+                                                    <th class="center">形态</th>
+                                                    <th class="center">包装方式</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr v-for="detail in work.details">
+                                                    <td class="center">{{detail.wasteTypeCode}}-{{detail.wasteTypeName}}</td>
+                                                    <td class="center">{{detail.wasteCode}}</td>
+                                                    <td class="center">{{detail.component}}</td>
+                                                    <td class="center">{{detail.weight}}</td>
+                                                    <td class="center">{{detail.morphological}}</td>
+                                                    <td class="center">{{detail.packaging}}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="profile-info-row">
+                                        <div class="profile-info-name">转运记录</div>
+                                        <div class="profile-info-value">
+                                            <div data-mohe-type="work_new" class="g-mohe " id="ggj-work_new">
+                                                <div id="ggj-work_new_nucom">
+                                                    <div class="mohe-wrap mh-wrap">
+                                                        <div class="mh-cont mh-list-wrap mh-unfold">
+                                                            <div class="mh-list" style="border-top: 0px; padding:0px;">
+                                                                <ul style="margin:0px;">
+                                                                    <li :class="index==0?'first':''" v-for="(transfer,index) in work.transfers">
+                                                                        <p>{{transfer.createDate}}</p>
+                                                                        <p>{{transfer.content}}</p>
+                                                                        <p>{{work.details!=null?work.details[0].plateNumber:''}}</p>
+                                                                        <p>操作员：{{transfer.userName}}&nbsp;&nbsp;{{transfer.userPhone}}</p>
+                                                                        <span class="before"></span><span class="after"></span>
+                                                                        <i v-if="index==0" class="mh-icon mh-icon-new"></i>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.page-content -->
+
+            </div><!-- /.main-content -->
+
+            <a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"
+               style="z-index:1111">
+                <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+            </a>
+        </div><!-- /.main-container -->
+    </div>
+</div>
+<!-- 底部 -->
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+<script src="/jquery/jquery.js"></script>
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script src="/jquery/jquery-1.11.1.min.js"></script>
+<![endif]-->
+
+
+<script src="/bootstrap/bootstrap.min.js"></script>
+
+<!-- ace scripts -->
+<script src="/ace/js/ace-elements.min.js"></script>
+<script src="/ace/js/ace.min.js"></script>
+
+<!-- 引入其他js -->
+<script src="/js/history.js"></script>
+<script type="text/javascript" src="/layer/layer.js"></script>
+<script type="text/javascript" src="/js/spin.min.js"></script>
+<script type="text/javascript" src="/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<script type="text/javascript" src="/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="/js/public.js"></script>
+<script type="text/javascript" src="/vue/vue.js"></script>
+<script type="text/javascript" src="/vue/axios.js"></script>
+<script type="text/javascript" src="/js/work/work-detail.js"></script>
+
+</body>
+</html>

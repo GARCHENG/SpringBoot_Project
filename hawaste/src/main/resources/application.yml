@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    username: root
+    password: '0313'
+    url: jdbc:mysql://localhost:3306/hawaste?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Hongkong
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+
+
+# MinIO对象存储相关配置
+minio:
+  bucketName: mall # 存储桶名字
+  endpoint: 127.0.0.1 #桶所在节点ip
+  port: 9000      # web管理服务访问端口
+  secure: false  #false为http   true为 https
+  accessKey: minioadmin #登录账号
+  secretKey: minioadmin #密码
+pic:
+  prefix: http://localhost:80/uploads #图片访问路径前缀
+

@@ -1,0 +1,134 @@
+
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+   
+    <meta charset="utf-8"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>危废智能监管平台</title>
+    <meta name="description" content="index"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/chosen/chosen.min.css"/>
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/ace/css/ace.min.css" id="main-ace-style"/>
+    <link rel="stylesheet" href="/ace/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="/ace/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="/ztree/metro.css"/>
+    <link rel="stylesheet" href="/validate/css/validform.css"/>
+    <link rel="stylesheet" href="/css/custom.css"/>
+
+    <!--[if !IE]> -->
+    <script src="/jquery/jquery.js"></script>
+    <!-- <![endif]-->
+    <!-- ace settings handler -->
+    <script src="/ace/js/ace-extra.min.js"></script>
+</head>
+
+<body class="no-skin" id="body-content">
+
+<!-- 主体 -->
+<div class="main-container" id="main-container">
+
+
+    <div class="main-content">
+
+        <div class="page-content">
+
+            <div class="page-header">
+                <h1> 请选择 </h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="fill-main-content" style="height:100%">
+                        <div>
+                            <div id="search" class="control-group" style="padding:10px 0 0 15px;">
+                                <label for="key" class="control-label" style="float:left;padding:5px 5px 3px;">关键字：</label>
+                                <input type="text" class="empty" id="key" name="key" maxlength="50" style="width:75%;">
+                            </div>
+                            <ul id="select-tree" class="ztree" style="padding:15px 20px;">
+								<li id="select-tree_1" class="level0" tabindex="0" hidefocus="true" treenode="">
+									<span id="select-tree_1_switch" title="" class="button level0 switch root_open" treenode_switch=""></span>
+									<a id="select-tree_1_a" class="level0" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="全部">
+									<span id="select-tree_1_ico" title="" treenode_ico="" class="button ico_open" style=""></span>
+									<span id="select-tree_1_span">全部</span>
+									</a>
+									<ul id="select-tree_1_ul" class="level0 " style="display:block">
+										<li id="select-tree_2" class="level1" tabindex="0" hidefocus="true" treenode="">
+										<span id="select-tree_2_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span>
+										<a id="select-tree_2_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="新注册用户默认机构">
+										<span id="select-tree_2_ico" title="" treenode_ico="" class="button ico_docu" style=""></span>
+										<span id="select-tree_2_span">新注册用户默认机构</span>
+										</a>
+										</li>
+										<li id="select-tree_3" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_3_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_3_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆天志环保有限公司（长寿处置场）"><span id="select-tree_3_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_3_span">重庆天志环保有限公司（长寿处置场）</span></a></li>
+										<li id="select-tree_4" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_4_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_4_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆天志环保有限公司（主城区处置场）"><span id="select-tree_4_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_4_span">重庆天志环保有限公司（主城区处置场）</span></a></li>
+										<li id="select-tree_5" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_5_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_5_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市万州区森浩污染物处置有限公司"><span id="select-tree_5_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_5_span">重庆市万州区森浩污染物处置有限公司</span></a></li>
+										<li id="select-tree_6" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_6_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_6_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆同兴医疗废物处理有限公司"><span id="select-tree_6_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_6_span">重庆同兴医疗废物处理有限公司</span></a></li>
+										<li id="select-tree_7" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_7_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_7_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市涪陵固体废物处理中心"><span id="select-tree_7_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_7_span">重庆市涪陵固体废物处理中心</span></a></li>
+										<li id="select-tree_8" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_8_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_8_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆华维实业有限责任公司"><span id="select-tree_8_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_8_span">重庆华维实业有限责任公司</span></a></li>
+										<li id="select-tree_9" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_9_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_9_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆宏源实业有限公司"><span id="select-tree_9_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_9_span">重庆宏源实业有限公司</span></a></li>
+										<li id="select-tree_10" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_10_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_10_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆龙健金属制造有限公司"><span id="select-tree_10_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_10_span">重庆龙健金属制造有限公司</span></a></li>
+										<li id="select-tree_11" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_11_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_11_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市利特环保工程有限公司（德感）"><span id="select-tree_11_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_11_span">重庆市利特环保工程有限公司（德感）</span></a></li>
+										<li id="select-tree_12" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_12_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_12_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市利特环保工程有限公司（黑石子）"><span id="select-tree_12_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_12_span">重庆市利特环保工程有限公司（黑石子）</span></a></li>
+										<li id="select-tree_13" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_13_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_13_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市长锦物资有限公司"><span id="select-tree_13_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_13_span">重庆市长锦物资有限公司</span></a></li>
+										<li id="select-tree_14" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_14_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_14_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市中明环境治理有限公司"><span id="select-tree_14_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_14_span">重庆市中明环境治理有限公司</span></a></li>
+										<li id="select-tree_15" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_15_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_15_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆宇立金属制品有限公司"><span id="select-tree_15_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_15_span">重庆宇立金属制品有限公司</span></a></li>
+										<li id="select-tree_16" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_16_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_16_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆市固体废物管理服务中心"><span id="select-tree_16_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_16_span">重庆市固体废物管理服务中心</span></a></li>
+										<li id="select-tree_17" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_17_switch" title="" class="button level1 switch center_docu" treenode_switch=""></span><a id="select-tree_17_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="重庆岭欧环保科技有限公司"><span id="select-tree_17_ico" title="" treenode_ico="" class="button ico_docu" style=""></span><span id="select-tree_17_span">重庆岭欧环保科技有限公司</span></a></li>
+										
+									</ul>
+								</li>
+							</ul>
+                            <div class="width-100" tag-save-btn="" style="padding-top: 15px; bottom: -36px; position: absolute;">
+		<span class="btn btn-primary btn-sm bigger-110 btn-block" id="officeEdit-save">
+			确 定
+		</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- /.page-content -->
+
+    </div><!-- /.main-content -->
+
+    <a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"  style="z-index:1111">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+
+<!-- 底部 -->
+<!-- basic scripts -->
+
+<script src="/bootstrap/bootstrap.min.js"></script>
+<!-- ace scripts -->
+<script src="/ace/js/ace-elements.min.js"></script>
+<script src="/ace/js/ace.min.js"></script>
+
+<!-- 引入其他js -->
+<script src="/js/history.js"></script>
+<script type="text/javascript" src="/layer/layer.js"></script>
+<script type="text/javascript" src="/js/spin.min.js"></script>
+<script type="text/javascript" src="/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<script type="text/javascript" src="/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="/js/public.js"></script>
+<script type="text/javascript" src="/vue/vue.js"></script>
+<script type="text/javascript" src="/vue/axios.js"></script>
+
+<!--<script type="text/javascript" src="/js/office/office.js"></script>-->
+
+</body>
+</html>

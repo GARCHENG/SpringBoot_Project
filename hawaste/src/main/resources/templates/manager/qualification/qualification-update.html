@@ -1,0 +1,130 @@
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+   
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>危废智能监管平台</title>
+    <meta name="description" content="index" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/chosen/chosen.min.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/ace/css/ace.min.css" id="main-ace-style" />
+
+    <link rel="stylesheet" href="/ace/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="/ace/css/ace-rtl.min.css" />
+
+    <link rel="stylesheet" href="/ztree/metro.css" />
+    <link rel="stylesheet" href="/validate/css/validform.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
+
+
+    <script src="/jquery/jquery.js"></script>
+
+    <!-- ace settings handler -->
+    <script src="/ace/js/ace-extra.min.js"></script>
+    <style>
+        #profile .center>label{width: 100px;text-align: right;}
+    </style>
+</head>
+
+<body class="no-skin" id="body-content">
+
+<!-- 主体 -->
+<div class="main-container" id="main-container">
+
+    <div class="main-content">
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>资质审核</h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 ">
+
+
+                    <div  class="profile-user-info profile-user-info-striped" style="overflow-y: auto; height: 370px;">
+                        <div class="profile-info-row">
+                            <div class="profile-info-name">资质图片</div>
+                            <div class="profile-info-value">
+                                <a title="点击查看原图" target="_blank" :href="qualification.address"><img height="300" :src="qualification.address"/></a>&nbsp;&nbsp;
+                            </div>
+                        </div>
+                        <div class="profile-info-row">
+                            <div class="profile-info-name">审核状态</div>
+                            <div class="profile-info-value">
+
+                                <span v-if="qualification.check==0" style="color:gray" >未审核</span>
+                                <span v-else-if="qualification.check==1"  style="color:green">审核通过</span>
+                                <span v-else-if="qualification.check==2"  style="color:red">审核失败</span>
+                            </div>
+                        </div>
+                        <div class="profile-info-row">
+                            <div class="profile-info-name">审核说明</div>
+                            <div class="profile-info-value">
+                                                        <span>
+                                                                <textarea id="description" rows="5" cols="50" v-model="qualification.description" name="description"></textarea>
+                                                        </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="width-100 clearfix tag-save-btn"  >
+                        <span class="btn btn-primary btn-sm bigger-110 width-50  pull-left" action="examine" id="leftButton" @click="update(1)">
+                            <i class="ace-icon fa fa-floppy-o align-top bigger-125"></i><span id="leftButtonText">通过</span>
+                        </span>
+                        <span class="btn btn-yellow btn-sm bigger-110 width-50 pull-right" action="unexamine" id="rightButton" @click="update(2)">
+                            <i class="ace-icon fa fa-times align-top  bigger-125"></i>不通过
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div><!-- /.page-content -->
+
+    </div><!-- /.main-content -->
+
+    <a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"  style="z-index:1111">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+
+<!-- 底部 -->
+<!-- basic scripts -->
+<script >
+/*    try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+    try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+    try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+    try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}*/
+</script>
+<script src="/bootstrap/bootstrap.min.js"></script>
+<!-- ace scripts -->
+<script src="/ace/js/ace-elements.min.js"></script>
+<script src="/ace/js/ace.min.js"></script>
+<!-- 引入其他js -->
+<script src="/js/history.js"></script>
+<script type="text/javascript" src="/layer/layer.js"></script>
+<script type="text/javascript" src="/js/spin.min.js"></script>
+<script type="text/javascript" src="/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<script type="text/javascript" src="/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="/js/public.js"></script>
+<script type="text/javascript" src="/vue/vue.js"></script>
+<script type="text/javascript" src="/vue/axios.js"></script>
+<script type="text/javascript" src="/js/qualification/qualification-update.js"></script>
+
+</body>
+</html>

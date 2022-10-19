@@ -1,0 +1,3 @@
+# Project exclude paths
+/hawaste/target/
+/springboot-minio-mydemo/target/

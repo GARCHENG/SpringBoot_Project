@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>危废智能监管平台</title>
+		<meta name="description" content="index" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="/bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" href="/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="/chosen/chosen.min.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="/ace/css/ace.min.css" id="main-ace-style" />
+
+		<link rel="stylesheet" href="/ace/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="/ace/css/ace-rtl.min.css" />
+
+		<link rel="stylesheet" href="/ztree/metro.css" />
+		<link rel="stylesheet" href="/validate/css/validform.css" />
+		<link rel="stylesheet" href="/css/custom.css" />
+		<!--验证码样式文件-->
+		<link rel="stylesheet" type="text/css" href="css/verify.css">
+
+		<script src="/jquery/jquery.js"></script>
+
+		<!-- ace settings handler -->
+		<script src="/ace/js/ace-extra.min.js"></script>
+	</head>
+
+	<body class="login-layout blur-login">
+		<div class="main-container">
+			<div class="main-content">
+				<div class="row">
+					<div class="col-sm-10 col-sm-offset-1">
+						<div class="login-container" style="padding-top: 60px;">
+							<div class="center">
+								<h1>
+									<span class="red" id="id-text2">危废智能监管平台</span>
+								</h1>
+								<h4 class="blue" id="id-company-text">&copy; 粤嵌</h4>
+							</div>
+
+							<div class="space-6"></div>
+
+							<div class="position-relative">
+								<div id="login-box" class="login-box visible widget-box no-border">
+									<div class="widget-body">
+										<div class="widget-main">
+											<h4 class="header blue lighter bigger" id="msg">
+												<i class="ace-icon fa fa-coffee green"></i>
+												hawaste-危废处置好帮手
+											</h4>
+
+											<div class="space-6"></div>
+
+											<form id="login-form" action="${ctxPath}/manager/login" method="post">
+												<fieldset>
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" class="form-control" name="username" placeholder="用户名" v-model="params.username" autocomplete="off"/>
+															<i class="ace-icon fa fa-user"></i>
+														</span>
+													</label>
+
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="password" class="form-control" name="password" placeholder="密码" v-model="params.password" autocomplete="off"/>
+															<i class="ace-icon fa fa-lock"></i>
+														</span>
+													</label>
+													
+													<label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<!--<input type="text" class="form-control width-55 pull-left" name="code" placeholder="验证码" autocomplete="off"/>
+															<img src="captcha?width=120&height=32" onclick="javascript:refresh(this);" id="code"
+															class="pull-right" title="点击换一张" style="cursor: pointer;border: 1px solid rgb(181, 181, 181);"/>-->
+														</span>
+													</label>
+
+													<div class="space"></div>
+
+													<div class="clearfix">
+														<span type="button" class="width-100 pull-right btn btn-primary" id="login-btn" v-on:click="doLogin">
+															<i class="ace-icon fa fa-key"></i>
+															<span class="bigger-115">登&nbsp;录</span>
+														</span>
+													</div>
+													<div id="mpanel2" style="margin-top:50px;">
+													</div>
+													<div class="space-4"></div>
+												</fieldset>
+											</form>
+
+										</div><!-- /.widget-main -->
+
+										<div class="toolbar clearfix">
+											<div style="width: 100%;text-align: center;">
+												<a href="javascript:void(0);" class="forgot-password-link bigger-130" style="text-decoration: none;">
+													<i class="ace-icon fa fa-arrow-left"></i>
+													请关注微信公众号"hawaste"进行注册
+													<i class="ace-icon fa fa-arrow-right"></i>
+												</a>
+											</div>
+										</div>
+									</div><!-- /.widget-body -->
+								</div><!-- /.login-box -->
+							</div><!-- /.position-relative -->
+
+						</div>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.main-content -->
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="/jquery/jquery.js"></script>
+		<!-- <![endif]-->
+
+		<script type="text/javascript" src="/layer/layer.js"></script>
+		<script type="text/javascript" src="/validate/Validform_v5.3.2_min.js"></script>
+		<script type="text/javascript" src="/vue/vue.js"></script>
+		<script type="text/javascript" src="/vue/axios.js"></script>
+		<!--验证码js文件-->
+		<script src="/js/crypto-js.js"></script>
+		<script src="/js/ase.js"></script>
+		<script src="/js/verify.js" ></script>
+
+		<script type="text/javascript">
+			let vm = new Vue({
+				el:'#login-box',
+				data:{
+					params:{}
+				},
+				methods:{
+					//服务端校验验证码
+					checkCaptcha:function(params){
+						// params为返回的二次验证参数 需要在接下来的实现逻辑回传服务器
+						console.log(params,"params");
+						params.captchaType="blockPuzzle";
+						axios({
+							url:'/checkCaptcha',
+							method:'post',
+							data:params
+						}).then(response=>{
+							console.log(response);
+							if(response.data.repCode !== "0000"){
+								layer.msg(response.data.repMsg);
+								return;
+							}
+							//验证码校验成功，进行登录
+							this.doLogin();
+						})
+					},
+					doLogin:function () {//登录
+						axios({
+							url:'/doLogin',
+							method:'post',
+							data:this.params
+						}).then(response=>{
+							if(response.data.code!=200){//失败
+								layer.msg(response.data.msg);
+								this.params.password='';//清空原密码
+							}else{//成功    1.跳转到index页面    2.保持用户状态
+								//sessionStorage中只能存储字符串  需要转换json字符串
+								sessionStorage.setItem("loginUser",JSON.stringify(response.data.data.loginUser));
+								//用户授权
+								// sessionStorage.setItem("resources",JSON.stringify(response.data.obj.resources))
+								location.href='/index.html';
+							}
+						})
+					}
+				},
+				mounted:function () {
+					// 初始化验证码  弹出式
+					$('#mpanel2').slideVerify({
+						baseUrl:'http://localhost:8080',  //服务器请求地址
+						mode:'pop',     //展示模式
+						containerId:'login-btn',//pop模式 必填 被点击之后出现行为验证码的元素id
+						success : params => { //成功的回调
+							this.checkCaptcha(params);
+						}
+					});
+				},
+				created:function () {
+					/*let msg = sessionStorage.getItem("msg");
+					if(msg!=undefined){
+						layer.msg(msg);
+						sessionStorage.removeItem("msg");
+					}*/
+				}
+
+			})
+
+		</script>
+	</body>
+</html>

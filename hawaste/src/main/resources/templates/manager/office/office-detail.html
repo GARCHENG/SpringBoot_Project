@@ -1,0 +1,319 @@
+
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	
+	<meta charset="utf-8"/>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<title>危废智能监管平台</title>
+	<meta name="description" content="index"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+	<!-- bootstrap & fontawesome -->
+	<link rel="stylesheet" href="../../../static/bootstrap/bootstrap.min.css"/>
+	<link rel="stylesheet" href="../../../static/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="../../../static/chosen/chosen.min.css"/>
+
+	<!-- ace styles -->
+	<link rel="stylesheet" href="../../../static/ace/css/ace.min.css" id="main-ace-style"/>
+	<link rel="stylesheet" href="../../../static/ace/css/ace-skins.min.css"/>
+	<link rel="stylesheet" href="../../../static/ace/css/ace-rtl.min.css"/>
+	<link rel="stylesheet" href="../../../static/ztree/metro.css"/>
+	<link rel="stylesheet" href="../../../static/validate/css/validform.css"/>
+	<link rel="stylesheet" href="../../../static/css/custom.css"/>
+
+	<!--[if !IE]> -->
+	<script src="../../../static/jquery/jquery.js"></script>
+	<!-- <![endif]-->
+	<!-- ace settings handler -->
+	<script src="../../../static/ace/js/ace-extra.min.js"></script>
+
+</head>
+
+<body class="no-skin" id="body-content">
+
+<!-- 主体 -->
+<div class="main-container" id="main-container">
+
+
+
+	<div class="main-content">
+		<div class="breadcrumbs" id="breadcrumbs">
+
+
+			<ul class="tab" id="breadcrumb">
+				<!-- <li class="active" >
+               菜单配置<i class="fa fa-times close"></i>
+               </li>  -->
+			</ul><!-- /.breadcrumb -->
+			<div id="tab-menu">
+				<ul class="dropdown-menu dropdown-caret" style="min-width: 0px;">
+					<li><a href="javascript:void(0);" data-right-menu="all_close">全部关闭</a></li>
+					<li><a href="javascript:void(0);" data-right-menu="other_close">关闭其他</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="page-content">
+			<div class="ace-settings-container" id="ace-settings-container">
+				<div class="btn btn-app btn-xs btn-warning ace-settings-btn"
+					 id="ace-settings-btn">
+					<i class="ace-icon fa fa-cog bigger-150"></i>
+				</div>
+
+				<div class="ace-settings-box clearfix" id="ace-settings-box">
+					<div class="pull-left width-50">
+						<div class="ace-settings-item">
+							<div class="pull-left">
+								<select id="skin-colorpicker" class="hide">
+									<option data-skin="no-skin" value="#438EB9">#438EB9</option>
+									<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+									<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+									<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+								</select>
+							</div>
+							<span>&nbsp; 皮肤</span>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-navbar" /> <label class="lbl"
+																	  for="ace-settings-navbar"> 固定页头</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-sidebar" /> <label class="lbl"
+																	   for="ace-settings-sidebar"> 固定导航菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-breadcrumbs" /> <label class="lbl"
+																		   for="ace-settings-breadcrumbs"> 固定导航条</label>
+						</div>
+
+						<!-- <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                id="ace-settings-rtl" /> <label class="lbl" for="ace-settings-rtl">
+                                Right To Left (rtl)</label>
+                        </div> -->
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-add-container" /> <label class="lbl"
+																			 for="ace-settings-add-container"> 固定宽度
+						</label>
+						</div>
+					</div>
+					<!-- /.pull-left -->
+
+					<div class="pull-left width-50">
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-hover" /> <label class="lbl"
+																	 for="ace-settings-hover"> 滑动式菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-compact" /> <label class="lbl"
+																	   for="ace-settings-compact"> 紧凑式菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-highlight" /> <label class="lbl"
+																		 for="ace-settings-highlight"> 高亮选中</label>
+						</div>
+					</div>
+					<!-- /.pull-left -->
+				</div>
+				<!-- /.ace-settings-box -->
+			</div>
+			<!-- /.ace-settings-container -->
+			<div class="page-header">
+				<h1> 单位信息 </h1>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div id="fill-main-content" style="height:100%">
+
+						<div class="profile-user-info profile-user-info-striped" >
+							<form enctype="multipart/form-data" action="company/save" name="FormPost" id="office-save-form" class="FormGrid" method="post">
+								<input type="hidden" name="id" value="56"/>
+								<div class="profile-info-row">
+									<div class="profile-info-name">单位名称</div>
+									<div class="profile-info-value">
+										<input style="border:0;" size="50" name="name" value="危废智能监管平台" nullmsg="请输入单位名称"/>
+									</div>
+								</div>
+								<div class="profile-info-row">
+									<div class="profile-info-name">单位LOGO</div>
+									<div class="profile-info-value">
+										<div class="sbd">
+											<input name="logoFile" type="file" id="logo_input" style="display:none;">
+											<a  id="office-logo">
+												<img id="logo" width="60" height="60" src="../../../static/uploads/logos/t0173066b1d6078dacd.jpg">
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="profile-info-row">
+									<div class="profile-info-name">联系方式</div>
+									<div class="profile-info-value">
+										<input style="border:0;" name="phone" value="" nullmsg="请输入联系方式"/>
+									</div>
+								</div>
+								<div class="profile-info-row">
+									<div class="profile-info-name">邮箱</div>
+									<div class="profile-info-value">
+										<input style="border:0;" name="email" value=""/>
+									</div>
+								</div>
+								<div class="profile-info-row">
+									<div class="profile-info-name">邮政编码</div>
+									<div class="profile-info-value">
+										<input style="border:0;" name="zip_code" value=""/>
+									</div>
+								</div>
+								<div class="profile-info-row">
+									<div class="profile-info-name">传真</div>
+									<div class="profile-info-value">
+										<input style="border:0;" name="fax" value=""/>
+									</div>
+								</div>
+								<div class="profile-info-row">
+									<div class="profile-info-name">单位地址</div>
+									<div class="profile-info-value">
+										<input style="border:0;" size="50" name="address" value="" nullmsg="请输入单位地址"/>
+									</div>
+								</div>
+								<div class="profile-info-row">
+									<div class="profile-info-name">单位资质</div>
+									<div class="profile-info-value">
+									</div>
+								</div>
+								<div class="profile-info-row">
+									<div class="profile-info-name">资质图片</div>
+									<div class="profile-info-value">
+										<div style="width:120px;float: left;">
+											<p style="width:100px;text-align:center;">营业执照</p>
+											<input name="zhizhaoFile" type="file" id="zhizhao_input" style="display:none;">
+											<a  id="zhizhao-img">
+												<img id="zhizhaoImg" width="100" height="100" src="../../../static/img/wechat/b4.png" />
+											</a>
+										</div>
+										<div style="width:120px;float: left;">
+											<p style="width:100px;text-align:center;">产废资质</p>
+											<input name="chanfeiFile" type="file" id="chanfei_input" style="display:none;">
+											<a  id="chanfei-img">
+												<img id="chanfeiImg" width="100" height="100" src="../../../static/img/wechat/b4.png" />
+											</a>
+										</div>
+										<div style="width:120px;float: left;">
+											<p style="width:100px;text-align:center;">运输资质</p>
+											<input name="yunshuFile" type="file" id="yunshu_input" style="display:none;">
+											<a  id="yunshu-img">
+												<img id="yunshuImg" width="100" height="100" src="../../../static/img/wechat/b4.png" />
+											</a>
+										</div>
+										<div style="width:120px;float: left;">
+											<p style="width:100px;text-align:center;">处理资质</p>
+											<input name="chuliFile" type="file" id="chuli_input" style="display:none;">
+											<a  id="chuli-img">
+												<img id="chuliImg" width="100" height="100" src="../../../static/img/wechat/b4.png" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="profile-info-row">
+									<div class="profile-info-name" style="width: 145px;">可处理的废物类别</div>
+									<div class="profile-info-value">
+									</div>
+								</div>
+								<div class="profile-info-row">
+									<div class="profile-info-name">单位简介</div>
+									<div class="profile-info-value" style="min-height:300px;width:90%;">
+										
+
+									</div>
+								</div>
+								<div class="margin-t15">
+									<span class="btn btn-info btn-block bigger-120" id="office-save-btn">保 存</span>
+								</div>
+							</form>
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div><!-- /.page-content -->
+
+	</div><!-- /.main-content -->
+
+	<a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"  style="z-index:1111">
+		<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+	</a>
+</div><!-- /.main-container -->
+
+<!-- 底部 -->
+<!-- basic scripts -->
+
+
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+<script src="../../../static/js/jquery.uploadPreview.js"></script>
+<!-- ueditor所需引入 -->
+<script type="text/javascript" src="../../../static/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="../../../static/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../static/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script src="../../../static/bootstrap/bootstrap.min.js"></script>
+
+<!-- ace scripts -->
+<script src="../../../static/ace/js/ace-elements.min.js"></script>
+<script src="../../../static/ace/js/ace.min.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+
+	var ue = UE.getEditor('container');
+
+	$(function(){
+		$('textarea[class*=autosize]').autosize({append: "\n"});
+
+		/*
+		$("#navbar").load("html/commons/navbar.html");
+		$("#sidebar").load("html/commons/sidebar.html");
+		$("#ace-settings-container").load("html/commons/settingsContainer.html");*/
+	})
+	try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+	try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+	try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+	try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+	try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+
+</script>
+
+<!-- 引入其他js -->
+<script src="../../../static/js/history.js"></script>
+<script type="text/javascript" src="../../../static/layer/layer.js"></script>
+<script type="text/javascript" src="../../../static/js/spin.min.js"></script>
+<script type="text/javascript" src="../../../static/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="../../../static/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="../../../static/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.form.js"></script>
+<script type="text/javascript" src="../../../static/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="../../../static/js/public.js"></script>
+<script type="text/javascript" src="../../../static/vue/vue.js"></script>
+<script type="text/javascript" src="../../../static/vue/axios.js"></script>
+
+<!--<script type="text/javascript" src="../../../static/js/area/index.js"></script>-->
+
+
+</body>
+</html>

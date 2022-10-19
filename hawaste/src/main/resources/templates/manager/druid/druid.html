@@ -1,0 +1,55 @@
+<html>
+	<!--模拟druid性能监控首页   开发时由druid自动生成-->
+	<head>
+		<title class="lang" langkey="xxxx">Druid Stat Index</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+		<link rel="stylesheet" href="../../../static/bootstrap/bootstrap.min.css" />
+
+	</head>
+	<body>		
+	<div style="float:right;margin-right:20px;">
+			<a class="langSelector" langnow="0">English</a> | <a class="langSelector" langnow="1">中文</a>
+		</div>
+		
+
+		
+    	<div class="container">
+          				
+			<table id="dataTable" style="background-color: #fff" class="table table-bordered responsive-utilities">
+				<tbody><tr>
+					<td valign="top" width="100" class="td_lable lang" langkey="Version">版本</td>
+					<td id="DruidVersion" width="95%">1.2.4</td>
+				</tr>
+				<tr>
+					<td valign="top" class="td_lable lang" langkey="Drivers">驱动</td>
+					<td id="DruidDrivers">com.mysql.cj.jdbc.Driver<br>com.alibaba.druid.mock.MockDriver<br>com.alibaba.druid.proxy.DruidDriver<br></td>
+				</tr>
+				<tr>
+					<td valign="top" class="td_lable lang" langkey="ResetEnable">是否允许重置</td>
+					<td id="ResetEnable">true</td>
+				</tr>
+				<tr>
+					<td valign="top" class="td_lable lang" langkey="ResetCount">重置次数</td>
+					<td id="ResetCount">0</td>
+				</tr>
+				<tr>
+					<td valign="top" class="td_lable lang" langkey="JavaVersion">Java版本</td>
+					<td id="JavaVersion">1.8.0_65</td>
+				</tr>
+				<tr>
+					<td valign="top" class="td_lable lang" langkey="JavaVMName">druid名称</td>
+					<td id="JavaVMName">Java HotSpot(TM) Client VM</td>
+				</tr>
+				<tr>
+					<td valign="top" class="td_lable lang" langkey="JavaClassPath">classpath路径</td>
+					<td id="JavaClassPath">E<br>\jdk8\jre\lib\charsets.jar<br>E<br>\jdk8\jre\lib\deploy.jar<br>E<br>\jdk8\jre\lib\ext\access-bridge.jar<br>E<br>\jdk8\jre\lib\ext\cldrdata.jar<br>E<br>\jdk8\jre\lib\ext\dnsns.jar<br>E<br>\jdk8\jre\lib\ext\jaccess.jar<br>E<br>\jdk8\jre\lib\ext\jfxrt.jar<br>E<br>\jdk8\jre\lib\ext\localedata.jar<br>E<br>\jdk8\jre\lib\ext\nashorn.jar<br>E<br>\jdk8\jre\lib\ext\sunec.jar<br>E<br>\jdk8\jre\lib\ext\sunjce_provider.jar<br>E<br>\jdk8\jre\lib\ext\sunmscapi.jar<br>E<br>\jdk8\jre\lib\ext\sunpkcs11.jar<br>E<br>\jdk8\jre\lib\ext\zipfs.jar<br>E<br>\jdk8\jre\lib\javaws.jar<br>E<br>\jdk8\jre\lib\jce.jar<br>E<br>\jdk8\jre\lib\jfr.jar<br>E<br>\jdk8\jre\lib\jfxswt.jar<br>E<br>\jdk8\jre\lib\jsse.jar<br>E<br>\jdk8\jre\lib\management-agent.jar<br>E<br>\jdk8\jre\lib\plugin.jar<br>E<br>\jdk8\jre\lib\resources.jar<br>E<br>\jdk8\jre\lib\rt.jar<br>F<br>\demoproject\springbootdemo\target\classes<br>E<br>\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.4.2\spring-boot-starter-web-2.4.2.jar<br>E<br>\.m2\repository\org\springframework\boot\spring-boot-starter\2.4.2\spring-boot-starter-2.4.2.jar<br>E<br>\.m2\repository\org\springframework\boot\spring-boot\2.4.2\spring-boot-2.4.2.jar<br>E<br>\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.4.2\spring-boot-starter-logging-2.4.2.jar<br>E<br>\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar<br>E<br>\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar<br>E<br>\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.13.3\log4j-to-slf4j-2.13.3.jar<br>E<br>\.m2\repository\org\apache\logging\log4j\log4j-api\2.13.3\log4j-api-2.13.3.jar<br>E<br>\.m2\repository\org\slf4j\jul-to-slf4j\1.7.30\jul-to-slf4j-1.7.30.jar<br>E<br>\.m2\repository\jakarta\annotation\jakarta.annotation-api\1.3.5\jakarta.annotation-api-1.3.5.jar<br>E<br>\.m2\repository\org\yaml\snakeyaml\1.27\snakeyaml-1.27.jar<br>E<br>\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.4.2\spring-boot-starter-json-2.4.2.jar<br>E<br>\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.11.4\jackson-databind-2.11.4.jar<br>E<br>\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.11.4\jackson-annotations-2.11.4.jar<br>E<br>\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.11.4\jackson-core-2.11.4.jar<br>E<br>\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.11.4\jackson-datatype-jdk8-2.11.4.jar<br>E<br>\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.11.4\jackson-datatype-jsr310-2.11.4.jar<br>E<br>\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.11.4\jackson-module-parameter-names-2.11.4.jar<br>E<br>\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.4.2\spring-boot-starter-tomcat-2.4.2.jar<br>E<br>\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\9.0.41\tomcat-embed-core-9.0.41.jar<br>E<br>\.m2\repository\org\glassfish\jakarta.el\3.0.3\jakarta.el-3.0.3.jar<br>E<br>\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\9.0.41\tomcat-embed-websocket-9.0.41.jar<br>E<br>\.m2\repository\org\springframework\spring-web\5.3.3\spring-web-5.3.3.jar<br>E<br>\.m2\repository\org\springframework\spring-webmvc\5.3.3\spring-webmvc-5.3.3.jar<br>E<br>\.m2\repository\org\springframework\spring-aop\5.3.3\spring-aop-5.3.3.jar<br>E<br>\.m2\repository\org\springframework\spring-context\5.3.3\spring-context-5.3.3.jar<br>E<br>\.m2\repository\org\springframework\spring-expression\5.3.3\spring-expression-5.3.3.jar<br>E<br>\.m2\repository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar<br>E<br>\.m2\repository\org\springframework\spring-jdbc\5.3.3\spring-jdbc-5.3.3.jar<br>E<br>\.m2\repository\org\springframework\spring-beans\5.3.3\spring-beans-5.3.3.jar<br>E<br>\.m2\repository\org\springframework\spring-core\5.3.3\spring-core-5.3.3.jar<br>E<br>\.m2\repository\org\springframework\spring-jcl\5.3.3\spring-jcl-5.3.3.jar<br>E<br>\.m2\repository\org\springframework\spring-tx\5.3.3\spring-tx-5.3.3.jar<br>E<br>\.m2\repository\com\alibaba\druid-spring-boot-starter\1.2.4\druid-spring-boot-starter-1.2.4.jar<br>E<br>\.m2\repository\com\alibaba\druid\1.2.4\druid-1.2.4.jar<br>E<br>\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar<br>E<br>\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.4.2\spring-boot-autoconfigure-2.4.2.jar<br>E<br>\工具软件\IntelliJ IDEA 2019.3.1\lib\idea_rt.jar</td>
+				</tr>
+				<tr>
+					<td valign="top" class="td_lable lang" langkey="StartTime">启动时间</td>
+					<td id="StartTime">2021-02-05 11:22:11</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+spring:
+   servlet:
+     multipart:
+      enabled: true
+      max-file-size: 10MB
+minio:
+  bucketName: mall # 存储桶名字
+  endpoint: 127.0.0.1 #桶所在节点ip
+  port: 9000      # web管理服务访问端口
+  secure: false  #false为http   true为 https
+  accessKey: minioadmin #登录账号
+  secretKey: minioadmin #密码

@@ -1,0 +1,189 @@
+
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	
+	<meta charset="utf-8"/>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<title>危废智能监管平台</title>
+	<meta name="description" content="index"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+	<!-- bootstrap & fontawesome -->
+	<link rel="stylesheet" href="/bootstrap/bootstrap.min.css"/>
+	<link rel="stylesheet" href="/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="/chosen/chosen.min.css"/>
+
+	<!-- ace styles -->
+	<link rel="stylesheet" href="/ace/css/ace.min.css" id="main-ace-style"/>
+	<link rel="stylesheet" href="/ace/css/ace-skins.min.css"/>
+	<link rel="stylesheet" href="/ace/css/ace-rtl.min.css"/>
+	<link rel="stylesheet" href="/ztree/metro.css"/>
+	<link rel="stylesheet" href="/validate/css/validform.css"/>
+	<link rel="stylesheet" href="/css/custom.css"/>
+
+	<!--[if !IE]> -->
+	<script src="/jquery/jquery.js"></script>
+	<!-- <![endif]-->
+	<!-- ace settings handler -->
+	<script src="/ace/js/ace-extra.min.js"></script>
+</head>
+
+<body class="no-skin" id="body-content">
+
+<!-- 主体 -->
+<div class="main-container" id="main-container">
+
+
+	<div class="main-content">
+
+		<div class="page-content">
+
+			<div class="page-header">
+				<h1> {{role.name}} 角色分配 </h1>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div id="fill-main-content" style="height:100%">
+							<h3 class="header smaller red">通过选择公司，然后为列出公司的人员分配角色</h3>
+							<div class="col-xs-6 col-sm-4 pricing-box">
+								<div class="widget-box widget-color-orange">
+									<div class="widget-header">
+										<h5 class="widget-title bigger lighter">所在公司</h5>
+									</div>
+
+									<div class="widget-body">
+										<div class="widget-main">
+											<ul class="ztree" id="treeOffice">
+
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-xs-6 col-sm-4 pricing-box">
+								<div class="widget-box widget-color-blue">
+									<div class="widget-header">
+										<h5 class="widget-title bigger lighter">待选人员</h5>
+									</div>
+
+									<div class="widget-body">
+										<div class="widget-main" id="dxuser">
+											<div class="checkbox">
+												<!--
+                                                vue的checkbox的选中：
+                                                1.value值和vue的绑定数值一致，自动选中
+                                                2.checkbox的值是true，自动选中
+                                                -->
+												<label v-for="user in dxUsers" >
+													<input class="ace ace-checkbox-2" type="checkbox" name="userIds" v-model="user.show" @click="checkDxUsers(user.id)">
+													<span class="lbl"> {{user.name}}</span>
+												</label>
+											</div>
+										</div>
+										<div :class="showAddBtn" id="addUserBtn">
+											<a href="javascript:void(0);" class="btn btn-block btn-primary" @click="addDxUsers">
+												<i class="ace-icon fa fa-plus bigger-110"></i>
+												<span>添加所选人员</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-xs-6 col-sm-4 pricing-box">
+								<div class="widget-box widget-color-green">
+									<div class="widget-header">
+										<h5 class="widget-title bigger lighter">已选人员</h5>
+									</div>
+
+									<div class="widget-body">
+										<form action="role/saveuser" method="post" id="role-user-form">
+											<div class="widget-main" id="yxuser">
+												<div class="checkbox">
+													<!--
+													vue的checkbox的选中：
+													1.value值和vue的绑定数值一致，自动选中
+													2.checkbox的值是true，自动选中
+													-->
+													<label v-for="user in yxUsers" >
+														<!--注意点击事件必须绑input上-->
+														<input class="ace ace-checkbox-2" type="checkbox" name="userIds" v-model="user.show" @click="checkYxUsers(user.id)">
+														<span class="lbl"> {{user.name}}</span>
+													</label>
+												</div>
+											</div>
+										</form>
+										<div :class="showRemoveBtn" id="removeUserBtn">
+											<a href="javascript:void(0);" class="btn btn-block btn-success" @click="removeYxUsers">
+												<i class="ace-icon fa fa-trash bigger-110"></i>
+												<span>移除人员</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+							<div class="width-100 clearfix" tag-save-btn="" style="bottom: -36px; left: 0px; position: absolute;">
+	<span class="btn btn-primary btn-sm bigger-110 width-50  pull-left" id="role-user-form-save">
+		<i class="ace-icon fa fa-floppy-o align-top bigger-125"></i> 确认分配
+	</span>
+								<span class="btn btn-yellow btn-sm bigger-110 width-50 pull-right" id="role-user-form-cancel">
+		<i class="ace-icon fa fa-times align-top  bigger-125"></i> 取 消
+	</span>
+							</div>
+
+
+				</div>
+			</div>
+
+
+
+		</div><!-- /.page-content -->
+
+	</div><!-- /.main-content -->
+
+	<a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"  style="z-index:1111">
+		<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+	</a>
+</div><!-- /.main-container -->
+
+<!-- 底部 -->
+<!-- basic scripts -->
+
+<script src="/bootstrap/bootstrap.min.js"></script>
+<!-- ace scripts -->
+<script src="/ace/js/ace-elements.min.js"></script>
+<script src="/ace/js/ace.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		
+
+	})
+
+</script>
+
+<!-- 引入其他js -->
+<script src="/js/history.js"></script>
+<script type="text/javascript" src="/layer/layer.js"></script>
+<script type="text/javascript" src="/js/spin.min.js"></script>
+<script type="text/javascript" src="/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="/js/jquery.form.js"></script>
+<script type="text/javascript" src="/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="/js/public.js"></script>
+<script type="text/javascript" src="/vue/vue.js"></script>
+<script type="text/javascript" src="/vue/axios.js"></script>
+
+<script type="text/javascript" src="/js/role/role-user.js"></script>
+
+</body>
+</html>

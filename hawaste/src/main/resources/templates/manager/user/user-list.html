@@ -1,0 +1,1270 @@
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+   
+    <meta charset="utf-8"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>危废智能监管平台</title>
+    <meta name="description" content="index"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="../../../static/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../../static/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../../static/chosen/chosen.min.css"/>
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="../../../static/ace/css/ace.min.css" id="main-ace-style"/>
+    <link rel="stylesheet" href="../../../static/ace/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="../../../static/ace/css/ace-rtl.min.css"/>
+    <link rel="stylesheet" href="../../../static/ztree/metro.css"/>
+    <link rel="stylesheet" href="../../../static/validate/css/validform.css"/>
+    <link rel="stylesheet" href="../../../static/css/custom.css"/>
+
+    <!--[if !IE]> -->
+    <script src="../../../static/jquery/jquery.js"></script>
+    <!-- <![endif]-->
+    <!-- ace settings handler -->
+    <script src="../../../static/ace/js/ace-extra.min.js"></script>
+	
+	<style>
+		#profile .center>label{width: 100px;text-align: right;}
+	</style>
+</head>
+
+<body class="no-skin" id="body-content">
+<!-- 顶部条 -->
+<div id="navbar" class="navbar navbar-default">
+
+
+	<div class="navbar-container clearfix" id="navbar-container">
+		<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+			<span class="sr-only">Toggle sidebar</span>
+
+			<span class="icon-bar"></span>
+
+			<span class="icon-bar"></span>
+
+			<span class="icon-bar"></span>
+		</button>
+
+		<div class="navbar-header pull-left" style="min-width:190px;">
+			<a  class="navbar-brand">
+				<small>
+					危废智能监管平台
+				</small>
+			</a>
+		</div>
+		<!-- <div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a  data-trigger="ajax" data-target="#fill-main-content" class="bigger-120">
+                    <i class="menu-icon fa "></i>&nbsp;
+                    </a>
+                </li>
+            </ul>
+        </div> -->
+
+		<div class="navbar-buttons navbar-header pull-right" role="navigation">
+			<ul class="nav ace-nav">
+
+				
+
+				<li class="purple" style="display:none;">
+					<a data-toggle="dropdown" class="dropdown-toggle" >
+						<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+						<span class="badge badge-important">8</span>
+					</a>
+
+					<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+						<li class="dropdown-header">
+							<i class="ace-icon fa fa-exclamation-triangle"></i>
+							8 Notifications
+						</li>
+
+						<li>
+							<a >
+								<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-pink fa fa-comment"></i>
+												New Comments
+											</span>
+									<span class="pull-right badge badge-info">+12</span>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a >
+								<i class="btn btn-xs btn-primary fa fa-user"></i>
+								Bob just signed up as an editor ...
+							</a>
+						</li>
+
+						<li>
+							<a >
+								<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-success fa fa-shopping-cart"></i>
+												New Orders
+											</span>
+									<span class="pull-right badge badge-success">+8</span>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a >
+								<div class="clearfix">
+											<span class="pull-left">
+												<i class="btn btn-xs no-hover btn-info fa fa-twitter"></i>
+												Followers
+											</span>
+									<span class="pull-right badge badge-info">+11</span>
+								</div>
+							</a>
+						</li>
+
+						<li class="dropdown-footer">
+							<a >
+								See all notifications
+								<i class="ace-icon fa fa-arrow-right"></i>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="light-blue">
+					<a data-toggle="dropdown"  class="dropdown-toggle">
+						<img class="nav-user-photo" src="../../../static/img/small-male-pic.png" />
+						<span class="user-info">
+									<small>你好,</small>
+									超级管理员
+								</span>
+
+						<i class="ace-icon fa fa-caret-down"></i>
+					</a>
+
+					<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+						<li>
+							<a href="../userCenter/userCenter.html">
+								<i class="ace-icon fa fa-user"></i>
+								我的资料
+							</a>
+						</li>
+
+						<li class="divider"></li>
+
+						<li>
+							<a href="../login.html">
+								<i class="ace-icon fa fa-power-off"></i>
+								退出
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div><!-- /.navbar-container -->
+</div>
+<!-- 主体 -->
+<div class="main-container" id="main-container">
+
+
+
+	<div id="sidebar" class="sidebar responsive">
+
+
+		<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+			<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+				<button class="btn btn-success">
+					<i class="ace-icon fa fa-signal"></i>
+				</button>
+
+				<button class="btn btn-info">
+					<i class="ace-icon fa fa-pencil"></i>
+				</button>
+
+				<button class="btn btn-warning">
+					<i class="ace-icon fa fa-users"></i>
+				</button>
+
+				<button class="btn btn-danger">
+					<i class="ace-icon fa fa-cogs"></i>
+				</button>
+			</div>
+
+			<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+				<span class="btn btn-success"></span>
+
+				<span class="btn btn-info"></span>
+
+				<span class="btn btn-warning"></span>
+
+				<span class="btn btn-danger"></span>
+			</div>
+		</div><!-- /.sidebar-shortcuts -->
+
+		<ul class="nav nav-list" id="sidebar-menu">
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-user"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 个人中心 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../userCenter/userCenter.html"
+								id="menu_manageruserCenter"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-file-o"></i>
+							<span class="menu-text"
+							> 我的资料 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-lastfm"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 单位管理 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../office/office-detail.html"
+								id="menu_managercompanydetail"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 单位信息 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../user/user.html"
+								id="menu_managercompanyaccounts"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 单位账号 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../work/company/work.html"
+								id="menu_managercompanywork"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 电子台账 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-puzzle-piece"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 业务管理 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../work/admin/work.html"
+								id="menu_manageradminwork"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 电子台账 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../qualification/index.html"
+								id="menu_managerqualificationindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 资质审核 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../demand/index.html"
+								id="menu_managerdemandindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 服务需求 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../examine/index.html"
+								id="menu_managerexamineindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> 考核管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../app/index.html"
+								id="menu_managerappindex"
+								haschild="false"
+						>
+							<i class="menu-icon "></i>
+							<span class="menu-text"
+							> APP管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../statute/index.html"
+								id="menu_managerstatuteindex"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-bolt"></i>
+							<span class="menu-text"
+							> 法律法规 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-group"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 机构用户 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../area/index.html"
+								id="menu_managerarea"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-globe"></i>
+							<span class="menu-text"
+							> 区域管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../office/office.html"
+								id="menu_manageroffice"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-sitemap"></i>
+							<span class="menu-text"
+							> 机构管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../user/user-list.html"
+								id="menu_managersysuser"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-user"></i>
+							<span class="menu-text"
+							> 用户管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../role/role.html"
+								id="menu_managerrole"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-graduation-cap"></i>
+							<span class="menu-text"
+							> 角色管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-cogs"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 系统管理 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					<li data-level="2">
+
+						<a
+								href="../menu/menu.html"
+								id="menu_managermenu"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-list"></i>
+							<span class="menu-text"
+							> 菜单配置 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../dict/dict.html"
+								id="menu_managerdict"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-calculator"></i>
+							<span class="menu-text"
+							> 字典管理 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+					<li data-level="2">
+
+						<a
+								href="../log/log.html"
+								id="menu_managersyslog"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-copy"></i>
+							<span class="menu-text"
+							> 日志查询 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+			<li data-level="1">
+
+				<a
+						href="javascript:void(0);" class="dropdown-toggle"
+						haschild="true"
+				>
+					<i class="menu-icon fa fa-binoculars"></i>
+					<span class="menu-text"
+						  style="vertical-align: middle;"
+					> 系统监控 </span>
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-hide" style="display:none;">
+					
+					<li data-level="2">
+
+						<a
+								href="../druid/druid.html"
+								id="menu_managermonitorjvm"
+								haschild="false"
+						>
+							<i class="menu-icon fa fa-flash"></i>
+							<span class="menu-text"
+							> 性能监控 </span>
+						</a>
+						<b class="arrow"></b>
+
+					</li>
+				</ul>
+			</li>
+		</ul><!-- /.nav-list -->
+		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+			<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+		</div>
+
+
+	</div>
+
+
+	<div class="main-content">
+		<div class="breadcrumbs" id="breadcrumbs">
+
+			<ul class="tab" id="breadcrumb">
+				<!-- <li class="active" >
+               菜单配置<i class="fa fa-times close"></i>
+               </li>  -->
+			</ul><!-- /.breadcrumb -->
+			<div id="tab-menu">
+				<ul class="dropdown-menu dropdown-caret" style="min-width: 0px;">
+					<li><a href="javascript:void(0);" data-right-menu="all_close">全部关闭</a></li>
+					<li><a href="javascript:void(0);" data-right-menu="other_close">关闭其他</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="page-content">
+			<div class="ace-settings-container" id="ace-settings-container">
+				<div class="btn btn-app btn-xs btn-warning ace-settings-btn"
+					 id="ace-settings-btn">
+					<i class="ace-icon fa fa-cog bigger-150"></i>
+				</div>
+
+				<div class="ace-settings-box clearfix" id="ace-settings-box">
+					<div class="pull-left width-50">
+						<div class="ace-settings-item">
+							<div class="pull-left">
+								<select id="skin-colorpicker" class="hide">
+									<option data-skin="no-skin" value="#438EB9">#438EB9</option>
+									<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+									<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+									<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+								</select>
+							</div>
+							<span>&nbsp; 皮肤</span>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-navbar" /> <label class="lbl"
+																	  for="ace-settings-navbar"> 固定页头</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-sidebar" /> <label class="lbl"
+																	   for="ace-settings-sidebar"> 固定导航菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-breadcrumbs" /> <label class="lbl"
+																		   for="ace-settings-breadcrumbs"> 固定导航条</label>
+						</div>
+
+						<!-- <div class="ace-settings-item">
+                            <input type="checkbox" class="ace ace-checkbox-2"
+                                id="ace-settings-rtl" /> <label class="lbl" for="ace-settings-rtl">
+                                Right To Left (rtl)</label>
+                        </div> -->
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-add-container" /> <label class="lbl"
+																			 for="ace-settings-add-container"> 固定宽度
+						</label>
+						</div>
+					</div>
+					<!-- /.pull-left -->
+
+					<div class="pull-left width-50">
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-hover" /> <label class="lbl"
+																	 for="ace-settings-hover"> 滑动式菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-compact" /> <label class="lbl"
+																	   for="ace-settings-compact"> 紧凑式菜单</label>
+						</div>
+
+						<div class="ace-settings-item">
+							<input type="checkbox" class="ace ace-checkbox-2"
+								   id="ace-settings-highlight" /> <label class="lbl"
+																		 for="ace-settings-highlight"> 高亮选中</label>
+						</div>
+					</div>
+					<!-- /.pull-left -->
+				</div>
+				<!-- /.ace-settings-box -->
+			</div>
+			<!-- /.ace-settings-container -->
+            <div class="page-header">
+                <h1> 用户管理 </h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="fill-main-content" style="height:100%">
+                        <div class="tabbable">
+                            <ul class="nav nav-tabs" id="myTab">
+                                <li class="active">
+                                    <a data-toggle="tab" href="#home">
+                                        <i class="green ace-icon fa fa-users bigger-120"></i> 用户列表
+                                    </a>
+                                </li>
+
+                                <li class=""><a data-toggle="tab" href="#profile">
+                                    <i class="green ace-icon fa fa-plus bigger-120"></i> 用户添加
+                                </a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div id="home" class="tab-pane active clearfix">
+                                    <div class="widget-container-col ui-sortable">
+                                        <div class="widget-box ">
+                                            <div class="widget-header widget-header-small">
+                                                <h6 class="widget-title">
+                                                    <i class="ace-icon fa fa-search"></i>搜索
+                                                </h6>
+
+                                                <div class="widget-toolbar">
+                                                    <a href="javascript:void(0);" data-action="collapse">
+                                                        <i class="ace-icon fa bigger-125 fa-chevron-up"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="widget-body">
+                                                <div class="widget-body-inner" >
+                                                    <div class="widget-main">
+                                                        <form action="sysuser/list" method="post" id="search-form"
+                                                              target="list-page" class="center clearfix">
+                                                            <div class="row padding-tb-10">
+                                                                <div class="col-sm-6">
+                                                                    <label class="inline">归属机构：</label>
+
+                                                                    <div class="btn-group width-80"   >
+	<span data-toggle="dropdown" class="btn btn-primary btn-white dropdown-toggle width-100">
+		<span id="pullDownTreeCurNameone">全部</span> <i class="ace-icon fa fa-angle-down icon-on-right"></i>
+	</span>
+
+                                                                        <div class="dropdown-menu dropdown-caret scrollable width-100" data-height="250">
+                                                                            <div class="padding-15">
+                                                                                <div style="padding-bottom: 10px;">
+                                                                                    <input type="text" id="pullDownTreeSearchone" placeholder="搜索" class="width-100"/>
+                                                                                </div>
+                                                                                <ul class="ztree" id="pullDownTreeone"></ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <input type="hidden" name="officeId" value="0" id="pullDownTreeCurIdone"/>
+                                                                    <input type="hidden" name="" value="" id="pullDownTreeCurPidone"/>
+                                                                    <input type="hidden" name="officeType" value="" id="pullDownTreeCurCidone"/>
+
+
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <label class="inline">真实姓名：</label>
+                                                                    <input type="text" class="width-80"  name="name"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row padding-tb-10">
+                                                                <div class="col-sm-6">
+                                                                    <label class="inline">所属角色：</label>
+                                                                    <select name="roles" multiple="" class="chosen-select tag-input-style" id="role-select" data-placeholder="选择角色" style="display: none;">
+                                                                        <option value="27">
+                                                                            测试运输方普通人员
+                                                                            &nbsp;(hawaste运输方测试机构)
+                                                                        </option>
+                                                                        <option value="26">
+                                                                            单位普通人员
+                                                                            &nbsp;(危废智能监管平台)
+                                                                        </option>
+                                                                        <option value="2">
+                                                                            单位管理员
+                                                                            &nbsp;(危废智能监管平台)
+                                                                        </option>
+                                                                        <option value="25">
+                                                                            监管方
+                                                                            &nbsp;(重庆市环境保护局)
+                                                                        </option>
+                                                                        <option value="24">
+                                                                            hawaste平台服务人员
+                                                                            &nbsp;(危废智能监管平台)
+                                                                        </option>
+                                                                        <option value="1">
+                                                                            超级管理员
+                                                                            &nbsp;(危废智能监管平台)
+                                                                        </option>
+                                                                    </select>
+
+
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <label class="inline">人员工号：</label>
+                                                                    <input type="text" class="width-80"  name="no"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="padding-trb-10 col-sm-12">
+                                                                <span class="btn  btn-primary btn-sm col-sm-6" onclick="/*$curmenu.trigger('click');*/">全 部 用 户</span>
+                                                                <span class="btn btn-info btn-sm col-sm-6" id="search-btn">条 件 查 询</span>
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>			<div class="space-6"></div>
+                                    <div id="list-page">
+                                        <table class="table table-striped table-bordered table-hover nomargin-bottom">
+                                            <thead>
+                                            <tr>
+                                                <th class="center">姓名</th>
+                                                <th class="center">归属机构</th>
+                                                <th class="center">角色</th>
+                                                <th class="center">电话</th>
+                                                <th class="center">邮箱</th>
+                                                <th class="center">最后登录IP</th>
+                                                <th class="center">最后登录时间</th>
+                                                <th class="center">操作</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                            <tr>
+                                                <td class="center">
+                                                    <a href="user-detail.html">超级管理员</a>
+                                                </td>
+                                                <td class="center">
+                                                    &nbsp;(危废智能监管平台)
+                                                </td>
+                                                <td class="center">超级管理员</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                                <td class="center">127.0.0.1</td>
+                                                <td class="center">2019-09-27 20:46:18</td>
+                                                <td class="center">
+                                                    <div class="hidden-sm hidden-xs action-buttons">
+
+                                                        <a class="green" href="detail.html" title="编辑">
+                                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                        </a>
+
+                                                        <a class="red" href="javascript:void(0);" title="删除">
+                                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center">
+                                                    <a href="user-detail.html">产废方测试账号</a>
+                                                </td>
+                                                <td class="center">
+                                                    &nbsp;(hawaste产废方测试机构)
+                                                </td>
+                                                <td class="center">单位管理员</td>
+                                                <td class="center">13996192751</td>
+                                                <td class="center"></td>
+                                                <td class="center">192.168.1.133</td>
+                                                <td class="center">2017-03-24 10:41:13</td>
+                                                <td class="center">
+                                                    <div class="hidden-sm hidden-xs action-buttons">
+
+                                                        <a class="green" href="detail.html" title="编辑">
+                                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                        </a>
+
+                                                        <a class="red" href="javascript:void(0);" title="删除">
+                                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center">
+                                                    <a href="user-detail.html">重庆市环保局测试员</a>
+                                                </td>
+                                                <td class="center">
+                                                    &nbsp;(重庆市环境保护局)
+                                                </td>
+                                                <td class="center">监管方</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                                <td class="center">127.0.0.1</td>
+                                                <td class="center">2017-03-24 10:30:22</td>
+                                                <td class="center">
+                                                    <div class="hidden-sm hidden-xs action-buttons">
+
+                                                        <a class="green" href="detail.html" title="编辑">
+                                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                        </a>
+
+                                                        <a class="red" href="javascript:void(0);" title="删除">
+                                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center">
+                                                    <a href="user-detail.html">未认证用户</a>
+                                                </td>
+                                                <td class="center">
+                                                    &nbsp;(hawaste产废方测试机构)
+                                                </td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                                <td class="center">127.0.0.1</td>
+                                                <td class="center">2017-03-24 10:28:21</td>
+                                                <td class="center">
+                                                    <div class="hidden-sm hidden-xs action-buttons">
+
+                                                        <a class="green" href="detail.html" title="编辑">
+                                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                        </a>
+
+                                                        <a class="red" href="javascript:void(0);" title="删除">
+                                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center">
+                                                    <a href="user-detail.html">未认证用户</a>
+                                                </td>
+                                                <td class="center">
+                                                    &nbsp;(新注册用户默认机构)
+                                                </td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                                <td class="center">
+                                                    <div class="hidden-sm hidden-xs action-buttons">
+
+                                                        <a class="green" href="detail.html" title="编辑">
+                                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                        </a>
+
+                                                        <a class="red" href="javascript:void(0);" title="删除">
+                                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center">
+                                                    <a href="user-detail.html">平台工作人员1</a>
+                                                </td>
+                                                <td class="center">
+                                                    &nbsp;(危废智能监管平台)
+                                                </td>
+                                                <td class="center">hawaste平台服务人员</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                                <td class="center">127.0.0.1</td>
+                                                <td class="center">2017-03-16 15:52:58</td>
+                                                <td class="center">
+                                                    <div class="hidden-sm hidden-xs action-buttons">
+
+                                                        <a class="green" href="detail.html" title="编辑">
+                                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                        </a>
+
+                                                        <a class="red" href="javascript:void(0);" title="删除">
+                                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center">
+                                                    <a href="user-detail.html">处置方测试账号</a>
+                                                </td>
+                                                <td class="center">
+                                                    &nbsp;(hawaste处置方测试机构)
+                                                </td>
+                                                <td class="center">单位管理员</td>
+                                                <td class="center">13883463544</td>
+                                                <td class="center"></td>
+                                                <td class="center">127.0.0.1</td>
+                                                <td class="center">2017-03-16 14:30:29</td>
+                                                <td class="center">
+                                                    <div class="hidden-sm hidden-xs action-buttons">
+
+                                                        <a class="green" href="detail.html" title="编辑">
+                                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                        </a>
+
+                                                        <a class="red" href="javascript:void(0);" title="删除">
+                                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center">
+                                                    <a href="user-detail.html"
+                                                       data-title="<运输方测试账号2>详情" >运输方测试账号2</a>
+                                                </td>
+                                                <td class="center">
+                                                    &nbsp;(hawaste运输方测试机构)
+                                                </td>
+                                                <td class="center">测试运输方普通人员</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                                <td class="center">127.0.0.1</td>
+                                                <td class="center">2017-03-16 14:29:34</td>
+                                                <td class="center">
+                                                    <div class="hidden-sm hidden-xs action-buttons">
+
+                                                        <a class="green" href="detail.html" title="编辑">
+                                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                        </a>
+
+                                                        <a class="red" href="javascript:void(0);" title="删除">
+                                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center">
+                                                    <a href="user-detail.html">运输方测试账号</a>
+                                                </td>
+                                                <td class="center">
+                                                    &nbsp;(hawaste运输方测试机构)
+                                                </td>
+                                                <td class="center">单位管理员</td>
+                                                <td class="center">13637920177</td>
+                                                <td class="center"></td>
+                                                <td class="center">127.0.0.1</td>
+                                                <td class="center">2017-03-16 14:25:45</td>
+                                                <td class="center">
+                                                    <div class="hidden-sm hidden-xs action-buttons">
+
+                                                        <a class="green" href="detail.html" title="编辑">
+                                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                        </a>
+
+                                                        <a class="red" href="javascript:void(0);" title="删除">
+                                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center">
+                                                    <a href="user-detail.html">处置方测试账号2</a>
+                                                </td>
+                                                <td class="center">
+                                                    &nbsp;(hawaste处置方测试机构)
+                                                </td>
+                                                <td class="center">单位普通人员</td>
+                                                <td class="center"></td>
+                                                <td class="center"></td>
+                                                <td class="center">127.0.0.1</td>
+                                                <td class="center">2016-11-07 11:21:37</td>
+                                                <td class="center">
+                                                    <div class="hidden-sm hidden-xs action-buttons">
+
+                                                        <a class="green" href="detail.html" title="编辑">
+                                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                        </a>
+
+                                                        <a class="red" href="javascript:void(0);" title="删除">
+                                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="space-8"></div>
+
+                                        <div class="clearfix">
+                                            <div style="float: left;">
+                                                <div style="padding-top:5px;">
+			<span class="badge badge-info">
+				当前第 1 页 / 3 页，共 26 条数据
+			</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="pagination no-margin pull-right clearfix">
+                                                    <li class="prev disabled"><a href="javascript:void(0);" onclick="return false;">首页</a></li>
+                                                    <li class="prev disabled"><a href="javascript:void(0);" onclick="return false;">上一页</a></li>
+                                                    <li class="active"><a href="javascript:void(0);" onclick="return false;">1</a></li>
+                                                    <li><a href="javascript:void(0);" onclick="paging('search-form',2);return false;">2</a></li>
+                                                    <li><a href="javascript:void(0);" onclick="paging('search-form',3);return false;">3</a></li>
+                                                    <li><a href="javascript:void(0);" onclick="paging('search-form',2);return false;">下一页</a></li>
+                                                    <li><a href="javascript:void(0);" onclick="paging('search-form',3);return false;">尾页</a></li>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div id="profile" class="tab-pane">
+                                    <form action="sysuser/save" method="post" id="sysuser-save-form">
+                                        <div class="center padding-10">
+                                            <label>登录名：</label>
+                                            <input type="text" class="width-50" name="username" id="username"
+                                                   ajaxurl="sysuser/checkname" />
+                                        </div>
+                                        <div class="center padding-10">
+                                            <label>密码：</label>
+                                            <input type="password" class="width-50" name="password"/>
+                                        </div>
+                                        <div class="center padding-10">
+                                            <label>确认密码：</label>
+                                            <input type="password" class="width-50" name="repassword"/>
+                                        </div>
+                                        <div class="center padding-10">
+                                            <label>真实姓名：</label>
+                                            <input type="text" class="width-50" name="name" />
+                                        </div>
+                                        <div class="center padding-10">
+                                            <label>归属机构：</label>
+                                            <div class="width-50 inline text-left" id="gsoffice">
+
+                                                <div class="btn-group width-100"   >
+	<span data-toggle="dropdown" class="btn btn-primary btn-white dropdown-toggle width-100">
+		<span id="pullDownTreeCurNametwo">请选择归属机构</span> <i class="ace-icon fa fa-angle-down icon-on-right"></i>
+	</span>
+
+                                                    <div class="dropdown-menu dropdown-caret scrollable width-100" data-height="250">
+                                                        <div class="padding-15">
+                                                            <div style="padding-bottom: 10px;">
+                                                                <input type="text" id="pullDownTreeSearchtwo" placeholder="搜索" class="width-100"/>
+                                                            </div>
+                                                            <ul class="ztree" id="pullDownTreetwo"></ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="officeId" value="0" id="pullDownTreeCurIdtwo"/>
+                                                <input type="hidden" name="" value="" id="pullDownTreeCurPidtwo"/>
+                                                <input type="hidden" name="" value="" id="pullDownTreeCurCidtwo"/>
+                                            </div>
+                                        </div>
+                                        <div class="center padding-10" >
+                                            <label>所属角色：</label>
+                                            <div class="width-50 inline text-left">
+                                                <select name="roleIds" multiple="" class="chosen-select tag-input-style" id="role-choose" data-placeholder="选择角色" style="display: none;">
+                                                    <option value="27">
+                                                        测试运输方普通人员
+                                                        &nbsp;(hawaste运输方测试机构)
+                                                    </option>
+                                                    <option value="26">
+                                                        单位普通人员
+                                                        &nbsp;(危废智能监管平台)
+                                                    </option>
+                                                    <option value="2">
+                                                        单位管理员
+                                                        &nbsp;(危废智能监管平台)
+                                                    </option>
+                                                    <option value="25">
+                                                        监管方
+                                                        &nbsp;(重庆市环境保护局)
+                                                    </option>
+                                                    <option value="24">
+                                                        hawaste平台服务人员
+                                                        &nbsp;(危废智能监管平台)
+                                                    </option>
+                                                    <option value="1">
+                                                        超级管理员
+                                                        &nbsp;(危废智能监管平台)
+                                                    </option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <div class="center padding-10">
+                                            <label>工号：</label>
+                                            <input type="text" class="width-50" name="no"/>
+                                        </div>
+                                        <div class="center padding-10">
+                                            <label>邮箱：</label>
+                                            <input type="text" class="width-50" name="email" />
+                                        </div>
+                                        <div class="center padding-10">
+                                            <label>电话：</label>
+                                            <input type="text" class="width-50" name="phone"/>
+                                        </div>
+                                        <div class="center padding-10">
+                                            <label>手机：</label>
+                                            <input type="text" class="width-50" name="mobile"/>
+                                        </div>
+                                        <div class="center padding-10" >
+                                            <label style="vertical-align: top;">描述：</label>
+                                            <textarea type="text" class="width-50" name="remarks"></textarea>
+                                        </div>
+                                        <div class="margin-t15">
+                                            <span class="btn btn-info btn-block bigger-120" id="sysuser-save-btn">保 存</span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- /.page-content -->
+
+    </div><!-- /.main-content -->
+
+    <a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"  style="z-index:1111">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+
+<!-- 底部 -->
+<!-- basic scripts -->
+
+
+<script>
+
+
+
+    $(function() {
+        $("div.dropdown-menu").on("click", ".ztree .switch,#pullDownTreeSearchtwo,.scroll-track", function(e) {e.stopPropagation(); });
+
+        $('.scrollable').each(function () {
+            var $this = $(this);
+            $(this).ace_scroll({
+                size: $this.data('height') || 250
+            });
+        });
+
+        
+        $("div.dropdown-menu").on("click", ".ztree .switch,#pullDownTreeSearchone,.scroll-track", function(e) {e.stopPropagation(); });
+
+        $('.scrollable').each(function () {
+            var $this = $(this);
+            $(this).ace_scroll({
+                size: $this.data('height') || 250
+            });
+        });
+
+       
+    });
+</script>
+
+<script src="../../../static/bootstrap/bootstrap.min.js"></script>
+<!-- ace scripts -->
+<script src="../../../static/ace/js/ace-elements.min.js"></script>
+<script src="../../../static/ace/js/ace.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        
+        $("#role-select").chosen({width: "80%",search_contains: true});
+        $("#role-choose").chosen({width: "100%",search_contains: true});
+    })
+    try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+    try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+    try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+    try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+
+</script>
+
+<!-- 引入其他js -->
+<script src="../../../static/js/history.js"></script>
+<script type="text/javascript" src="../../../static/layer/layer.js"></script>
+<script type="text/javascript" src="../../../static/js/spin.min.js"></script>
+<script type="text/javascript" src="../../../static/ztree/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.autosize.min.js"></script>
+<script type="text/javascript" src="../../../static/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="../../../static/validate/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.form.js"></script>
+<script type="text/javascript" src="../../../static/js/bootstrap-contextmenu.js"></script>
+<script type="text/javascript" src="../../../static/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="../../../static/js/public.js"></script>
+<script type="text/javascript" src="../../../static/vue/vue.js"></script>
+<script type="text/javascript" src="../../../static/vue/axios.js"></script>
+
+<!--<script type="text/javascript" src="../../../static/js/office/office.js"></script>-->
+
+
+
+</body>
+</html>

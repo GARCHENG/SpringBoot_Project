@@ -1,0 +1,253 @@
+
+<!-- 头部 -->
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="renderer" content="webkit">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>危废智能监管平台</title>
+
+        <meta name="description" content="index" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+        <!-- bootstrap & fontawesome -->
+        <link rel="stylesheet" href="../../../static/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../../static/css/font-awesome.min.css" />
+
+        <link rel="stylesheet" href="../../../static/chosen/chosen.min.css" />
+
+        <!-- ace styles -->
+        <link rel="stylesheet" href="../../../static/ace/css/ace.min.css" id="main-ace-style" />
+
+        <!--[if lte IE 9]>
+        <link rel="stylesheet" href="../../../static/ace/css/ace-part2.min.css" />
+        <![endif]-->
+        <link rel="stylesheet" href="../../../static/ace/css/ace-skins.min.css" />
+        <link rel="stylesheet" href="../../../static/ace/css/ace-rtl.min.css" />
+
+        <!--[if lte IE 9]>
+        <link rel="stylesheet" href="../../../static/ace/css/ace-ie.min.css" />
+        <![endif]-->
+
+        <link rel="stylesheet" href="../../../static/ztree/metro.css" />
+        <link rel="stylesheet" href="../../../static/validate/css/validform.css" />
+        <link rel="stylesheet" href="../../../static/css/custom.css" />
+
+        <!--[if !IE]> -->
+        <script src="../../../static/jquery/jquery.js"></script>
+        <!-- <![endif]-->
+
+        <!--[if IE]>
+        <script src="../../../static/jquery/jquery-1.11.1.min.js"></script>
+        <![endif]-->
+
+
+        <!-- ace settings handler -->
+        <script src="../../../static/ace/js/ace-extra.min.js"></script>
+
+        <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+        <!--[if lte IE 8]>
+        <script src="../../../static/bootstrap/html5shiv.min.js"></script>
+        <script src="../../../static/bootstrap/respond.min.js"></script>
+        <script>var ie8 = "ie8";</script>
+        <![endif]-->
+    </head>
+
+    <body class="no-skin" id="body-content">
+
+        <!-- 主体 -->
+        <div class="main-container" id="main-container">
+
+
+            <div class="main-content">
+                <div class="breadcrumbs" id="breadcrumbs">
+                    <script type="text/javascript">
+                        try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+                    </script>
+
+                    <ul class="tab" id="breadcrumb">
+                        <!-- <li class="active" >
+                       菜单配置<i class="fa fa-times close"></i>
+                       </li>  -->
+                    </ul><!-- /.breadcrumb -->
+                    <div id="tab-menu">
+                        <ul class="dropdown-menu dropdown-caret" style="min-width: 0px;">
+                            <li><a href="javascript:void(0);" data-right-menu="all_close">全部关闭</a></li>
+                            <li><a href="javascript:void(0);" data-right-menu="other_close">关闭其他</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="page-content">
+                    <div class="ace-settings-container" id="ace-settings-container">
+                        <div class="btn btn-app btn-xs btn-warning ace-settings-btn"
+                             id="ace-settings-btn">
+                            <i class="ace-icon fa fa-cog bigger-150"></i>
+                        </div>
+
+                        <div class="ace-settings-box clearfix" id="ace-settings-box">
+                            <div class="pull-left width-50">
+                                <div class="ace-settings-item">
+                                    <div class="pull-left">
+                                        <select id="skin-colorpicker" class="hide">
+                                            <option data-skin="no-skin" value="#438EB9">#438EB9</option>
+                                            <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                                            <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                                            <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                                        </select>
+                                    </div>
+                                    <span>&nbsp; 皮肤</span>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2"
+                                           id="ace-settings-navbar" /> <label class="lbl"
+                                                                              for="ace-settings-navbar"> 固定页头</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2"
+                                           id="ace-settings-sidebar" /> <label class="lbl"
+                                                                               for="ace-settings-sidebar"> 固定导航菜单</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2"
+                                           id="ace-settings-breadcrumbs" /> <label class="lbl"
+                                                                                   for="ace-settings-breadcrumbs"> 固定导航条</label>
+                                </div>
+
+                                <!-- <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2"
+                                        id="ace-settings-rtl" /> <label class="lbl" for="ace-settings-rtl">
+                                        Right To Left (rtl)</label>
+                                </div> -->
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2"
+                                           id="ace-settings-add-container" /> <label class="lbl"
+                                                                                     for="ace-settings-add-container"> 固定宽度
+                                </label>
+                                </div>
+                            </div>
+                            <!-- /.pull-left -->
+
+                            <div class="pull-left width-50">
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2"
+                                           id="ace-settings-hover" /> <label class="lbl"
+                                                                             for="ace-settings-hover"> 滑动式菜单</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2"
+                                           id="ace-settings-compact" /> <label class="lbl"
+                                                                               for="ace-settings-compact"> 紧凑式菜单</label>
+                                </div>
+
+                                <div class="ace-settings-item">
+                                    <input type="checkbox" class="ace ace-checkbox-2"
+                                           id="ace-settings-highlight" /> <label class="lbl"
+                                                                                 for="ace-settings-highlight"> 高亮选中</label>
+                                </div>
+                            </div>
+                            <!-- /.pull-left -->
+                        </div>
+                        <!-- /.ace-settings-box -->
+                    </div>
+                    <!-- /.ace-settings-container -->
+                    <div class="page-header">
+                        <h1> 请选择 </h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="fill-main-content" style="height:100%">
+                                <div class="xuboxPageHtml" id="xboxTest" style="overflow-y: auto; height: 328px;">
+								
+                                    <div>
+                                        <div id="search" class="control-group" style="padding:10px 0 0 15px;">
+                                            <label for="key" class="control-label" style="float:left;padding:5px 5px 3px;">关键字：</label>
+                                            <input type="text" class="empty" id="key" name="key" maxlength="50" style="width:75%;">
+                                        </div>
+                                        <ul id="select-tree" class="ztree" style="padding:15px 20px;">
+											<li id="select-tree_1" class="level0" tabindex="0" hidefocus="true" treenode="">
+												<span id="select-tree_1_switch" title="" class="button level0 switch root_open" treenode_switch=""></span>
+												<a id="select-tree_1_a" class="level0" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="全部">
+													<span id="select-tree_1_ico" title="" treenode_ico="" class="button ico_open" style=""></span>
+													<span id="select-tree_1_span">全部</span>
+												</a>
+												<ul id="select-tree_1_ul" class="level0 " style="display:block">
+													<li id="select-tree_2" class="level1" tabindex="0" hidefocus="true" treenode="">
+														<span id="select-tree_2_switch" title="" class="button level1 switch center_close" treenode_switch=""></span>
+														<a id="select-tree_2_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="个人中心">
+															<span id="select-tree_2_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-user" style=""></span>
+															<span id="select-tree_2_span">个人中心</span>
+														</a>
+													</li>
+													<li id="select-tree_4" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_4_switch" title="" class="button level1 switch center_close" treenode_switch=""></span><a id="select-tree_4_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="单位管理"><span id="select-tree_4_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-lastfm" style=""></span><span id="select-tree_4_span">单位管理</span></a>
+													</li>
+													<li id="select-tree_8" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_8_switch" title="" class="button level1 switch center_close" treenode_switch=""></span><a id="select-tree_8_a" class="level1 curSelectedNode" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="业务管理"><span id="select-tree_8_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-puzzle-piece" style=""></span><span id="select-tree_8_span">业务管理</span></a>
+													</li>
+													<li id="select-tree_15" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_15_switch" title="" class="button level1 switch center_close" treenode_switch=""></span><a id="select-tree_15_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="机构用户"><span id="select-tree_15_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-group" style=""></span><span id="select-tree_15_span">机构用户</span></a>
+													</li>
+													<li id="select-tree_21" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_21_switch" title="" class="button level1 switch center_close" treenode_switch=""></span><a id="select-tree_21_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="系统管理"><span id="select-tree_21_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-cogs" style=""></span><span id="select-tree_21_span">系统管理</span></a>
+													</li>
+													<li id="select-tree_25" class="level1" tabindex="0" hidefocus="true" treenode=""><span id="select-tree_25_switch" title="" class="button level1 switch bottom_close" treenode_switch=""></span><a id="select-tree_25_a" class="level1" treenode_a="" onclick="" target="_blank" style="font-weight:normal;color:#333;" title="系统监控"><span id="select-tree_25_ico" title="" treenode_ico="" class="button cusicon ace-icon ico fa fa-binoculars" style=""></span><span id="select-tree_25_span">系统监控</span></a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+                                        <div class="width-100" tag-save-btn="" style="padding-top: 15px; bottom: -36px; position: absolute;">
+                                            <span class="btn btn-primary btn-sm bigger-110 btn-block" id="treeselectid-save">
+                                                确 定
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!-- /.page-content -->
+
+            </div><!-- /.main-content -->
+
+            <a href="javascript:void(0);" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"  style="z-index:1111">
+                <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+            </a>
+        </div><!-- /.main-container -->
+
+        <!-- 底部 -->
+        <!-- basic scripts -->
+
+        <!--[if !IE]> -->
+        <script src="../../../static/jquery/jquery.js"></script>
+        <!-- <![endif]-->
+
+       
+        <script src="../../../static/bootstrap/bootstrap.min.js"></script>
+
+        <!-- ace scripts -->
+        <script src="../../../static/ace/js/ace-elements.min.js"></script>
+        <script src="../../../static/ace/js/ace.min.js"></script>
+
+
+        <!-- 引入其他js -->
+        <script src="../../../static/js/history.js"></script>
+        <script type="text/javascript" src="../../../static/layer/layer.js"></script>
+        <script type="text/javascript" src="../../../static/js/spin.min.js"></script>
+        <script type="text/javascript" src="../../../static/ztree/jquery.ztree.all-3.5.min.js"></script>
+        <script type="text/javascript" src="../../../static/js/jquery.autosize.min.js"></script>
+        <script type="text/javascript" src="../../../static/chosen/chosen.jquery.min.js"></script>
+        <script type="text/javascript" src="../../../static/validate/Validform_v5.3.2_min.js"></script>
+        <script type="text/javascript" src="../../../static/js/jquery.form.js"></script>
+        <script type="text/javascript" src="../../../static/js/bootstrap-contextmenu.js"></script>
+        <script type="text/javascript" src="../../../static/js/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="../../../static/js/public.js"></script>
+
+
+    </body>
+</html>

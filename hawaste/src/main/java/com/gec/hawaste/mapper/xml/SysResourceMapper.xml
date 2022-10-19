@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gec.hawaste.mapper.SysResourceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gec.hawaste.entity.SysResource">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="common" property="common" />
+        <result column="icon" property="icon" />
+        <result column="sort" property="sort" />
+        <result column="parent_id" property="parentId" />
+        <result column="type" property="type" />
+        <result column="url" property="url" />
+        <result column="description" property="description" />
+        <result column="status" property="status" />
+        <result column="parent_ids" property="parentIds" />
+        <result column="create_date" property="createDate" />
+        <result column="update_date" property="updateDate" />
+        <result column="create_by" property="createBy" />
+        <result column="update_by" property="updateBy" />
+        <result column="del_flag" property="delFlag" />
+        <result column="permission_str" property="permissionStr" />
+    </resultMap>
+
+</mapper>

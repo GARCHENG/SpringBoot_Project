@@ -1,0 +1,411 @@
+﻿html {-webkit-text-size-adjust:none; /*解决chrome浏览器下字体不能小于12px*/}
+body{ color:#000000; font-family:Verdana, Arial, Helvetica, sans-serif;}
+a{outline:none; text-decoration:none;} a:hover{ text-decoration:underline;}
+html{zoom:1;}html *{outline:0;zoom:1;} html button::-moz-focus-inner{border-color:transparent!important;} 
+body{overflow-x: hidden; font-size:12px;} body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0)} table{border-collapse:collapse;border-spacing:0; border:1px solid #ccc;} table td{border:1px solid #ccc;} fieldset,a img{border:0;-webkit-tap-highlight-color:rgba(0,0,0,0)} address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal;} li{list-style:none;} caption,th{text-align:left;} h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;} q:before,q:after{content:'';}
+input[type="submit"], input[type="reset"], input[type="button"],input[type="text"],input[type="password"],textarea, button { -webkit-appearance: none !important; /*去掉苹果的默认UI来渲染按钮*/} em,i{ font-style:normal;}
+/*文字超出隐藏*/
+.w_break{
+	word-break:keep-all;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+strong,em,i{ font-style:normal; font-weight:normal;}
+.clear{ clear:both;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;line-height:0;}
+.clearfix{zoom:1;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	font-size:62.5%
+}
+select{
+ -webkit-appearance:none;-moz-appearance:none;appearanearance: none;}
+@media only screen and (min-width:321px) { /*iphone5*/
+html {
+font-size:62.5%!important
+}
+}
+@media only screen and (min-width:361px) { /*三星note*/
+html {
+font-size:70.31%!important
+}
+}
+@media only screen and (min-width:376px) { /*iphone6*/
+html {
+font-size:73.24%!important
+}
+}
+@media only screen and (min-width:481px) {
+html {
+font-size:94%!important
+}
+}
+@media only screen and (min-width:561px) {
+html {
+font-size:109%!important
+}
+}
+@media only screen and (min-width:641px) {
+html {
+font-size:125%!important
+}
+}
+/**************************************/
+.lft{ float:left;}
+.rgt{ float:right;}
+img{ width:auto; max-width:100%;vertical-align: middle;}
+html{-webkit-text-size-adjust:none;}
+body{font-family: "Microsoft YaHei",sans-serif;  background:#efefef; line-height: 1.7; /*max-width: 64rem; min-width: 32rem; */ max-width:640px; margin: 0 auto; min-width: 320px; position: relative; height:100%; color:#555555; }
+body a{ color:#555555;text-decoration:none;cursor:pointer}
+body a:hover,body a:active,body a:focus{text-decoration:none;outline:none}
+a:hover,a:link,a:visited,a{ color:inherit; text-decoration:none;}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #e9e9e9;  
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #e9e9e9;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #e9e9e9;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #e9e9e9;
+}
+
+.layout{position:relative;text-align:left;background:#efefef;font-size:0.625rem;margin:0 auto; overflow:hidden;}
+
+.loadMore{ padding:1rem 0; text-align:center; font-size:1.2rem; padding-top:0.5rem; color:#565656;}
+.loadMore a{ display:block; padding:1rem;}
+
+.btn_md{height: 4rem;line-height: 4rem;color: #FFF;text-align: center;background: #1fc980;font-size: 1.3rem;color: #FFf;border: none; border-radius:0.5rem;cursor: pointer;}
+.bg_fdf1e5{background: #fdf1e5;}
+.bg_eefbf4{background: #eefbf4;}
+.bg_fff{background: #FFF;}
+
+.cb{display: inline-block; background:url(../img/wechat/i6.png) no-repeat  left center / 1.8rem; line-height:1.8rem; height:1.8rem;padding-left: 2.5rem;cursor: pointer;}
+.cb_active{ background-image:url(../img/wechat/i6_a.png)}
+.rb{display: inline-block; background:url(../img/wechat/i6.png) no-repeat  left center / 1.8rem; line-height:1.8rem; height:1.8rem;padding-left: 2.5rem;cursor: pointer;}
+.rb_active{ background-image:url(../img/wechat/i6_a.png)}
+
+.mt1{margin-top: 1rem;}
+/*footer*/
+.h90{height: 4.8rem;clear: both;}
+.footer{position: fixed;z-index: 3;bottom: 0;left: 0;width: 100%;}
+.footer .nav{height: 4.5rem;background: #22a674;}
+.footer .nav li{float: left;width: 33%;position: relative;}
+.footer .nav li:nth_child(2){width: 34%;}
+.footer .nav li a{display: block;line-height: 4.35rem;border-top: 0.15rem solid #22a674;font-size: 1.3rem;color: #FFF;text-align: center;}
+.footer .nav li.on a{border-top-color: #fffea6;}
+.footer .nav li.act .sub{display: block;}
+.footer .nav li .sub{position: absolute;z-index: 3;top:-8.5rem;left:0.3rem;display: none;width: 100%;height: 10rem;padding-top: 0.5rem; background:url(../img/wechat/b2.png) no-repeat center / 100% 100%;}
+.footer .nav li .sub a{border-top: 0;margin: 0 11% 0 5%;text-align: center;color: #333;line-height: 4rem;border-bottom: 1px solid #d6d6d6;}
+.footer .nav li .sub a:last-child{border: 0;}
+.footer .nav li.act .sub2{display: block;}
+.footer .nav li .sub2{background: rgba(0, 0, 0, 0) url("../img/wechat/b2.png") no-repeat scroll center center / 100% 100%; height: 15rem; left: 0.3rem; padding-top: 0.5rem; position: absolute; top: -12.5rem; width: 100%; z-index: 3; display:none;}
+.footer .nav li .sub2 a{border-top: 0;margin: 0 11% 0 5%;text-align: center;color: #333;line-height: 4rem;border-bottom: 1px solid #d6d6d6;}
+.footer .nav li .sub2 a:last-child{border: 0;}
+.footer .nav li.act .sub3{display: block;}
+.footer .nav li .sub3{background: rgba(0, 0, 0, 0) url("../img/wechat/b2.png") no-repeat scroll center center / 100% 100%; height: 14rem; left: 0.3rem; padding-top: 0.5rem; position: absolute; top: -11.6rem; width: 100%; z-index: 3; display:none;}
+.footer .nav li .sub3 a{border-top: 0;margin: 0 11% 0 5%;text-align: center;color: #333;line-height: 4rem;border-bottom: 1px solid #d6d6d6;}
+.footer .nav li .sub3 a:last-child{border: 0;}
+
+/*hawaste界面-01-2菜单未展示*/
+.box_ban{ background:url(../img/wechat/b1.jpg) no-repeat center / cover;height: 10.7rem;overflow: hidden;text-align: center;}
+.box_ban a{margin-top: 2.7rem;display: inline-block;padding:0 2rem;height: 3rem;line-height: 3rem;font-size: 1.5rem;color: #FFF;background: #1fc980; border-radius:0.5rem}
+.box_ban p{margin-top: 1.25rem;font-size: 1.1rem;color: #fff;}
+
+
+.box_screen{background: #FFF;margin-top: 0.8rem;padding: 0 1.4rem 1.5rem;}
+.box_screen .head{padding-top: 1.2rem;font-size: 1.3rem;line-height: 1.3rem;color: #333;}
+.box_screen .body{text-align: center;}
+.box_screen .body p{margin-top: 1rem;overflow: hidden;}
+.box_screen .body p .sle{float: left;height: 2.9rem; width: 48%;padding-left: 3%; background: #eefbf4 url(../img/wechat/i1.png) no-repeat 93% 1.2rem / 0.9rem 0.9rem; -webkit-appearance:none;-moz-appearance:none;appearance:none; border:none;font-size: 1.2rem;color: #333;}
+.box_screen .body p .sle:last-child{float: right;}
+.box_screen .body .btn_md{width: 60%;margin-top: 1.75rem;}
+
+.box_md2 .head{height: 3.4rem;line-height: 3.4rem; background:url(../img/wechat/l2.png) repeat-x center / 100% 0.1rem;text-align: center;}
+.box_md2 .head span{padding:0 1.1rem;font-size: 1.2rem;color: #333;background: #efefef;}
+.lst_screen .body{background: #FFF;padding: 0 1.4rem;}
+.lst_screen .body li{padding: 1.5rem 0 1rem;position: relative; background:url(../img/wechat/l1.png) no-repeat center bottom / 100% 1px;}
+.lst_screen .body li a{display: block;overflow: hidden;}
+.lst_screen .body li .pic{float: left;width: 4.2rem;height: 4.2rem;border: 1px solid #e7e7e7;overflow: hidden; border-radius:0.6rem;}
+.lst_screen .body li .txt{margin-left: 5.7rem;}
+.lst_screen .body li .txt h3{font-weight: normal;font-size: 1.3rem;color: #333;line-height: 1.3rem;}
+.lst_screen .body li .txt p{margin-top: 1.1rem;overflow: hidden;}
+.lst_screen .body li .txt p span{display: block;float: left;height: 2rem;line-height: 2rem;font-size: 1.1rem;color: #666;padding: 0 1.1rem 0 0.9rem;margin-right: 0.4rem; border-radius:1rem}
+.lst_screen .body li .phone{position: absolute;right: 0;top: 0;height: 100%;line-height: 100%;width: 3rem; background:url(../img/wechat/i2.png) no-repeat center center / 2.6rem;text-indent: -999px;}
+
+
+
+/*hawaste界面-02*/
+.company_unit{ background:url(../img/wechat/b2.jpg) no-repeat top center / 100% auto;padding-top: 2.5rem;height: 12.4rem;text-align: center;}
+.company_unit .pic img{width: 6.4rem;height: 6.4rem;}
+.company_unit p{font-size: 1.3rem;line-height: 1.3rem;color: #FFF;margin-top: 1rem;}
+
+.company_lxr{overflow: hidden;margin-top: 0.8rem;background: #FFF;padding: 0 1.5rem 1rem;}
+.company_lxr span{display: inline-block;padding: 0 1.5rem ;margin-top: 1.2rem; height: 2.1rem;line-height:2.1rem;font-size: 1.2rem;color: #888;background: #fdf1e6; border-radius:0.95rem}
+.company_lxr p{overflow: hidden;padding-bottom: 0.3rem;}
+.company_lxr p a{text-align: center;display: block;float: left;margin-top: 0.5rem;width: 32%;margin-right: 2%;height: 2.1rem;line-height:2.1rem;font-size: 1.2rem;color: #888;background: #e8f9f1; border-radius:0.95rem}
+.company_lxr p a:nth-child(3n){margin-right: 0;}
+
+.company_details{margin-top: 0.8rem;background: #FFF;padding: 0 1.5rem 1rem;overflow: hidden;}
+.company_details h3{font-size: 1.4rem;line-height: 1.4rem;margin-top: 2rem;color: #222;}
+.company_details p{margin-top: 0.8rem;font-size: 1.2rem;line-height: 1.9rem;color: #555;}
+
+/*hawaste界面-03*/
+.service_form{margin-top: 1rem;}
+.service_form .body{background: #FFF;padding: 0 1.5rem 2.2rem; }
+.service_form .body p{border-bottom: 1px solid #C8C9CA;overflow: hidden;padding-left:7.5rem ;position: relative;height: 4.7rem;line-height: 4.7rem;}
+.service_form .body p:last-child{border-bottom:0;}
+.service_form .body p label{position: absolute;left: 0;top: 0;padding-left: 1.75rem;font-size: 1.2rem;color: #333;}
+.service_form .body p i{position: absolute;left: 0.5rem;top: 0.3rem;display: block;color: #EFA04C;}
+.service_form .body p .text{width: 100%;height: 1.2rem;line-height: 1.2rem;font-size: 1.2rem;color:#666;padding: 1.75rem 0;border: 0;background: none;}
+.service_form .body .textarea{width: 100%;height: 12rem; box-sizing:border-box;padding: 0.5rem 0.5rem 0.5rem 1.75rem;border: 1px solid #dbdbdb;font-size: 1.1rem; color: #979797;}
+
+.service_form .foot{padding: 1.5rem 1.5rem 3rem 1.5rem;}
+.service_form .foot .btn_md{width: 100%;}
+
+
+/*hawaste界面-04*/
+.box_search{margin-top: 1rem;padding: 1rem 1.3rem;background: #FFF;}
+.box_search .text{border: 1px solid #C8C9CA;padding: 1rem 12% 1rem 4%;width: 83.9%;font-size: 1.3rem;color: #999; border-radius:0.4rem;}
+.box_search .searchImg{position: relative; top:-38px; left:85%; width:25px;}
+.box_search .searchImg img{width:20px; cursor:pointer; padding:10px;}
+
+.lst_search{margin-top: 16px;}
+.box_md .head{padding: 0.6rem 5rem;background: #FFF;}
+.box_md .head p{overflow: hidden; border:1px solid #22A773; border-radius:0.4rem}
+.box_md .head p a{float: left;display: block;width: 50%;text-align: center;font-size: 1.3rem;height: 2.5rem;line-height: 2.5rem;color: #22A773;}
+.box_md .head p a.on{background: #22A773;color: #FFF;}
+.lst_search .body{padding-top: 0.4rem;}
+.lst_search .body li{background: #FFF;margin-top: 0.25rem;}
+.lst_search .body li a{overflow: hidden;display: block;padding: 1.25rem 3rem 1.25rem 1.3rem; background:url(../img/wechat/i8.png) no-repeat 95% center / 0.75rem 1.4rem;}
+.lst_search .body li .pic{float: left;}
+.lst_search .body li .pic img{width: 4.3rem;height: 4.3rem;}
+.lst_search .body li .txt{margin-left: 5.6rem;} 
+.lst_search .body li .txt p{font-size: 1.3rem;line-height: 1.3rem;margin-top: 0.6rem;white-space: nowrap;-ms-text-overflow: ellipsis;text-overflow: ellipsis;overflow: hidden;color: #333;}
+.lst_search .body li .txt span{display: block;font-size: 1.1rem;line-height: 1.1rem;margin-top: 0.8rem;color: #666;}
+
+
+/*hawaste界面-05*/
+.box_article{margin-top: 1rem;background: #FFF;padding: 0 2.7rem 3rem;}
+.box_article .head{padding-top: 1rem;}
+.box_article .head h1{text-align: center;font-size: 1.4rem;line-height: 1.9rem;color: #333;font-weight: normal;}
+.box_article .head p{padding-top: 0.8rem;line-height: 1.2rem;font-size: 1.2rem;color: #999;overflow: hidden;}
+.box_article .head p span{float: left;}
+.box_article .head p i{font-weight: normal;float: right;}
+.box_article .body{padding-top: 0.7rem;}
+.box_article .body p{font-size: 1.2rem;line-height: 140%;color: #555;text-indent: 2em;margin-top: 1rem;}
+
+/*hawaste界面-06*/
+.box_wfkh .head{background: #efefef;padding: 1rem 5rem;}
+.box_wfkh .body li{margin-bottom: 1.2rem;position: relative;}
+.box_wfkh .body li a{display: block;}
+.box_wfkh .body li span img{width: 100%;}
+.box_wfkh .body li .zzc{position: absolute;width: 100%;height: 100%;line-height: 100%;left: 0;top: 0;text-align: center;background-color:rgba(34,167,115,0.3);}
+.box_wfkh .body li .zzc p{position: absolute;top: 50%;left: 0;width: 100%;margin-top: -1rem;font-size: 1.5rem;color: #FFF;}
+.box_wfkh .body li .zzc img{vertical-align: middle;width: 2rem;height: 2rem;margin-right: 1rem;}
+
+/*hawaste界面-07*/
+.box_zwkh{}
+.box_zwkh .head{text-align: center;}
+.box_zwkh .head h3{height: 3.4rem;line-height: 3.4rem;font-size: 1.2rem;color: #22A773;font-weight: normal; text-align:center;}
+.box_zwkh .head h3 span{position: absolute;right: 1.75rem;display: block;top: 0;font-size: 1.1rem; }
+.box_zwkh .head h3 span i{font-style: normal;color: #333;}
+.box_zwkh .head h3 a{position:absolute; left:1.75rem;}
+.box_zwkh .head p{height: 3.9rem;line-height: 3.9rem;font-size: 1.4rem;color: #333;background: #FFF;}
+.box_zwkh .body dl{margin: 0 1.25rem;}
+.box_zwkh .body dt{font-size: 1.3rem;line-height: 2.1rem;color: #333;margin-top: 1rem;}
+.box_zwkh .body dt p{text-align: right;line-height: 1.4rem;}
+.box_zwkh .body dt p a{color: #fdad64;padding-right: 2.2rem;margin-right: 0.3rem; background:url(../img/wechat/i12.png) no-repeat right center / 1.9rem 1.4rem}
+.box_zwkh .body dd{background: #FFF;margin-top: 1rem;padding: 0 1.5rem 0 1.3rem;}
+.box_zwkh .body dd div{line-height: 1.9rem;font-size: 1.2rem;color: #333;padding: 1.1rem 0 1.3rem; background:url(../img/wechat/l1.png) no-repeat center bottom / 100% 0.1rem;}
+.box_zwkh .body dd div .cb{height: auto; background:url(../img/wechat/i11.png) no-repeat left 0.3rem /1.5rem ;}
+.box_zwkh .body dd div .cb_active{background-image: url(../img/wechat/i11_a.png);}
+.box_zwkh .body dd div .rb{height: auto; background:url(../img/wechat/i20.png) no-repeat left 0.3rem /1.5rem ;}
+.box_zwkh .body dd div .rb_active{background-image: url(../img/wechat/i21.png);}
+.box_zwkh .body dd div i{position: absolute; right: 2.75rem; color: #ffa759;}
+
+.f_khpage{height: 4.2rem;line-height: 4.2rem;padding: 0 5rem;background: #22A773;}
+.f_khpage ul{height: 4.2rem;}
+.f_khpage li{float: left;width: 33%;position: relative;height: 4.2rem;}
+.f_khpage li:nth-child(2n){width: 34%;}
+.f_khpage li a{display: block;font-size: 1.2rem;color: #FFF;}
+.f_khpage li a.prev{padding-left: 2rem; background:url(../img/wechat/i13.png) no-repeat left center / 1rem 1.7rem;}
+.f_khpage li a.next{padding-right: 2rem;text-align: right; background:url(../img/wechat/i14.png) no-repeat right center / 1rem 1.7rem;}
+.f_khpage li a.submitBotton{padding-right: 2rem;text-align: right;background:url(../img/wechat/i14.png) no-repeat right center / 1rem 1.7rem;}
+.f_khpage li .box_df{position: absolute;top: -1rem;width: 100%;padding-top: 1rem; background:  url(../img/wechat/b3.png) no-repeat top center / 5.5rem 1rem;text-align: center;}
+.f_khpage li .box_df span{display: block;font-size: 1.7rem;color: #ffff8e;line-height: 1.5rem;margin-top: 0.2rem;}
+.f_khpage li .box_df p{font-size: 1.1rem;line-height: 1.1rem;margin-top: 0.5rem;color: #FFf;}
+
+/*hawaste界面-10*/
+.box_zzdf{background: #fff;	text-align: center;}
+.box_zzdf .head{font-size: 1.3rem;padding-top: 1.5rem;color: #666;}
+.box_zzdf .body{margin-top:1.1rem;height: 15rem;}
+.box_zzdf .score span{color: #21a772; font-size: 5rem; position: relative; top: -12.5rem; padding-left:10px;padding-left: 1.5rem;}
+.box_zzdf .score i{color: #333; font-size: 1.5rem; position: relative; top: -12.5rem;}
+.box_zzdf .scoreResult{text-align: center; color:#21a772; position:relative; top: -3rem; font-size:1.3rem;}
+.box_zzdf .body img{width: 14.5rem;height: 13.8rem;}
+
+.tb_lsdf .head{padding: 0 1.3rem;}
+
+.tb_lsdf .body{padding-top: 2rem;background: #FFF;overflow: hidden; }
+.tb_lsdf .body .ts{font-size: 1.2rem;color: #666;overflow: hidden;line-height: 1.2rem;}
+.tb_lsdf .body .ts span{float: left;margin-left: 0.5rem;}
+.tb_lsdf .body .ts i{float: right;margin-right: 1.3rem;padding-left: 2.4rem; background:url(../img/wechat/l5_2.png) no-repeat left center / 1.7rem 1px}
+.tb_lsdf .body .ts2{font-size: 1.2rem;color: #666;overflow: hidden;line-height: 1.2rem;}
+.tb_lsdf .body .ts2 span{float: left;margin-left: 0.5rem;}
+.tb_lsdf .body .ts2 i{float: right;margin-right: 1.3rem;padding-left: 2.4rem; background:url(../img/wechat/l5.png) no-repeat left center / 1.7rem 1px}
+
+.tb_lsdf .foot{padding: 2rem 1.3rem;overflow: hidden;}
+.tb_lsdf .foot .back{float: left;display: block;height: 3.7rem;line-height: 3.7rem;border: 1px solid #1fc980; border-radius:0.4rem;padding-left: 19%;width: 21%;font-size: 1.3rem;color: #1fc980; background:url(../img/wechat/i19.png) no-repeat 30% center / 0.9rem 1.6rem}
+.tb_lsdf .foot .btn_md{display: block;float: right;width: 55%;color: #fff; line-height: 3.8rem;height: 3.8rem;text-align: center;}
+
+.zzt_lsdf{position: relative;margin-left: 3.4rem;margin-bottom: 5rem;margin-right: 0.5rem;height: 10rem;margin-top: 1.1rem;border-left:1px solid #DBDCDC ;border-bottom:1px solid #DBDCDC ;}
+.zzt_lsdf .y{position: absolute;left: 0;height: 100%;width: 100%;}
+.zzt_lsdf .y span{width: 100%;height: 16.5%;left: 0;display: block;border-top: 1px dashed #efefef;}
+.zzt_lsdf .y span:first-child{border-top: 0; }
+.zzt_lsdf .y span i{position: absolute;margin-top: -0.8rem;font-size: 1rem;color: #666;right: 102%;}
+.zzt_lsdf .x{height: 100%;}
+.zzt_lsdf .x li{position: relative;z-index: 4;float: left;height: 100%;width: 15%;}
+.zzt_lsdf .x li span{display: block;position: absolute;left: 50%;margin-left: -0.45rem;bottom: 0;width: 0.9rem;background: #1fc980; border-radius:0.45rem}
+.zzt_lsdf .x li span.no{background: #c6bdac;}
+.zzt_lsdf .x li i{position: absolute;width: 100%;text-align: center;top: 105%;font-size: 0.9rem;color: #666;}
+.zzt_lsdf .x li i em{display: block;font-size: 1.2rem;color: #C79F62;}
+.zzt_lsdf .line{position: absolute;height: 1px;left: 0;overflow: hidden;width: 100%; background:url(../img/wechat/l5_2.png) repeat-x center / auto 1px;}
+.zzt_lsdf .line2{position: absolute;height: 1px;left: 0;overflow: hidden;width: 100%; background:url(../img/wechat/l5.png) repeat-x center / auto 1px;}
+
+
+
+/*hawaste界面-10*/
+.box_zyzt{}
+.box_zyzt .head ul{height: 3.75rem;border-bottom: 1px solid #dadada;text-align: center;}
+.box_zyzt .head li{float: left;width: 25%;}
+.box_zyzt .head li a{display: block;height: 3.65rem;line-height: 3.65rem;font-size: 1.3rem; color: #666;margin: 0 1rem;}
+.box_zyzt .head li.on a,
+.box_zyzt .head li a:hover{border-bottom: 0.15rem solid #22A773;color: #22A773;}
+
+.box_zyzt .head .screen{padding: 0.75rem 1rem; overflow: hidden;background: #FFF;}
+.box_zyzt .head .screen .sle{float: left;height: 2.9rem; width: 48%;padding-left: 3%; background: #eefbf4 url(../img/wechat/i1.png) no-repeat 93% 1.2rem / 0.9rem 0.9rem; -webkit-appearance:none;-moz-appearance:none;appearance:none; border:none;font-size: 1.2rem;color: #333;}
+.box_zyzt .head .screen .date{float: right;border: none; width: 45%;height: 1.2rem;line-height: 1.2rem;font-size: 1.2rem;padding:0.85rem 0;padding-left: 3%; text-align:left;background: #eefbf4 url(../img/wechat/i15.png) no-repeat 93% 0.7rem / 1.3rem 1.3rem; }
+.box_zyzt .body{padding-top: 0.6rem;}
+.box_zyzt .body li{margin-top: 0.2rem;background: #FFF;}
+.box_zyzt .body li a{display: block;padding: 1.5rem 1rem;overflow: hidden;}
+.box_zyzt .body li .pic{float: left;border: 0px solid #C8C9CA;}
+.box_zyzt .body li .pic img{width: 4.6rem;height: 4.6rem;}
+.box_zyzt .body li .txt{position: relative;margin-left: 6rem;margin-right: 7.5rem; background:url(../img/wechat/l4.png) no-repeat right center / 0.1rem 100% ;}
+.box_zyzt .body li .txt h3{font-size: 1.3rem;color: #333;line-height: 1.3rem;font-weight: normal;}
+.box_zyzt .body li .txt p{color: #22A773;font-size: 1rem;line-height: 1rem;margin-top: 0.6rem;}
+.box_zyzt .body li .txt span{display: block;color: #999;font-size: 1rem;line-height: 1rem;margin-top: 0.7rem;}
+.box_zyzt .body li .txt i{right: -7rem;top: 50%;margin-top: -1.3rem;position: absolute;display: block;width: 5.5rem;height: 2.6rem; border: 1px solid #EFA04C; color: #EFA04C;font-size: 1.3rem;text-align: center;line-height: 2.6rem; border-radius:0.3rem}
+.box_zyzt .body li .txt i.ywc{color: #1FC980;border-color: #1FC980;}
+
+/*hawaste界面-11*/
+.box_zylc .head{}
+.box_zylc .head .map{height: 15.2rem;box-shadow:0px 0px 10px rgba(144,144,144,0.3);}
+.box_zylc .head .mapZoom{position: absolute; right:1.5rem; top:1.5rem;}
+.box_zylc .head .mapZoom img{height:3rem; width:3rem; opacity:0.7; cursor: pointer;}
+.box_zylc .head .sbd{margin-top: 0.85rem;background: #FFF;padding: 1.3rem;}
+.box_zylc .head .sbd .btn_md{display: block;line-height: 3.8rem;height: 3.8rem;color: #FFF;background: #1fc980 url(../img/wechat/i14.png) no-repeat 92% center / 1rem 1.6rem;}
+.box_zylc .body{background: #FFF;margin-top: 0.8rem;padding: 0 1.3rem;}
+.box_zylc .body .t{padding-top: 0.2rem;height: 3.5rem;line-height: 3.5rem;padding-left: 3.7rem;font-size: 1.2rem;color: #666;border-bottom: 1px solid #C8C9CA; background:url(../img/wechat/i17.png) no-repeat 1rem 1.4rem / 1.9rem 1.35rem}
+.box_zylc .body ul{margin-top: 1.3rem;margin-left: 1.7rem;}
+.box_zylc .body li{position: relative;margin-right: 1.3rem;padding-left: 2rem;padding-bottom: 2.6rem; background:url(../img/wechat/l5.jpg) no-repeat right bottom / 100%  1.25rem;border-left: 1px solid #DBDCDC;}
+.box_zylc .body li p{font-size: 1.3rem;line-height: 1.7rem;color: #666;}
+.box_zylc .body li span{font-size: 1rem;display: block;line-height: 1rem;color: #999;margin-top: 0.9rem;}
+.box_zylc .body li i{position: absolute;display: block; width: 0.7rem;height: 0.7rem;left: -0.35rem;top: 0; background:url(../img/wechat/i16.png) no-repeat center /100%}
+.box_zylc .body li:first-child p{color: #FFA85A;}
+.box_zylc .body li:first-child span{color: #FFA85A;}
+.box_zylc .body li:first-child i{width: 1.5rem;height: 1.5rem;left: -0.75rem; background:url(../img/wechat/i18.png) no-repeat center /100%;}
+.box_zylc .body li:last-child{background: none;}
+
+/*hawaste界面-13*/
+.box_md3 {background: #efefef;}
+.box_md3 .head{margin: 0 1rem;}
+.box_md3 .body{background: #FFF;}
+.tb_dzld .body{border-top: 1px solid #DBDCDC; overflow-x: scroll;}
+.tb_dzld .body table{}
+.tb_dzld .body table th{padding: 0 1rem;white-space: nowrap;font-weight: normal;text-align: center;font-size: 1.2rem;line-height: 3.2rem;background: #f3fcf9;border-bottom:1px dashed #e3e9e7 ;color: #333;}
+.tb_dzld .body table td{text-align: center;font-size: 1.3rem;color: #666;line-height: 1.8rem;padding: 0.7rem 0;border-bottom:1px dashed #e3e9e7 ;}
+.tb_dzld .body table tr:last-child td{border-bottom-style: solid;}
+
+
+
+/*hawaste界面-15*/
+.page_login{ background:url(../img/wechat/b2.jpg) no-repeat center bottom / cover}
+.page_login .head{padding-top: 3.2rem;text-align: center;}
+.page_login .head .pic{margin: 0 auto;width: 6.5rem;height: 6.5rem;overflow: hidden; border-radius:50%;border: 1px solid　#6ac19f;}
+.page_login .head .pic img{width: 100%;height: 100%;}
+.page_login .head p{font-size: 1.7rem;color: #FFF;line-height: 1.7rem;margin-top: 0.9rem;}
+
+.page_login .body{padding: 60px 1.75rem 0;}
+.page_login .body ul{ background-color: rgba(255,255,255,0.2); border-radius:0.5rem}
+.page_login .body li{line-height: 3.9rem; background:url(../img/wechat/l3.png) no-repeat bottom / 96% 0.1rem;}
+.page_login .body li:last-child{background: none;}
+.page_login .body li .text{border: none;font-size: 1.3rem;height: 1.3rem;line-height: 1.3rem;padding: 1.4rem 0 1.4rem 14%;width: 85%;color: #FFF; background-color:transparent;}
+.page_login .body li .t_phone{ background:url(../img/wechat/i3.png) no-repeat 1.7rem center / 1.3rem 2rem;}
+.page_login .body li .t_psw,.t_psw2{ background:url(../img/wechat/i4.png) no-repeat 1.65rem center / 1.5rem 2rem;}
+.page_login .body .btn_md{margin-top: 2.5rem;width: 100%; height: 3.9rem;line-height: 3.9rem;font-size: 1.4rem;}
+.page_login .body p{text-align: right;margin-top: 1rem;font-size: 1.2rem;line-height: 1.2rem;}
+.page_login .body p a{color: #FFF;margin-right: 5px;}
+
+.page_login .foot{position: absolute;bottom: 6.2rem;left: 0;width: 100%;text-align: center;}
+.page_login .foot a{display: inline-block;padding: 0 3.5rem;height: 2.5rem;line-height: 2.5rem;border: 1px solid #fff; border-radius:1.25rem;font-size: 1.2rem;color: #FFF;}
+
+/*hawaste界面-16*/
+.page_reg .body{padding-top: 2.2rem;}
+.page_reg .body li .t_yzm{ background:url(../img/wechat/i5.png) no-repeat 1.3rem center / 2rem 1.9rem;width: 50%;}
+.page_reg .body li .btn_yzm{background: none;height: 3.9rem;cursor: pointer; border: none;font-size: 1.3rem;color: #eaf5a8;text-align: center;width: 35%;}
+.page_reg .body p{margin-top: 1.4rem;line-height: 2rem;height: 2rem;text-align: center;}
+.page_reg .body p span{color: #FFF;}
+.page_reg .body p a{border-bottom: 1px solid #fff;}
+
+/*hawaste界面-19*/
+.lst_dwlx .body li{ background:url(../img/wechat/b4.jpg) no-repeat center / cover;margin-bottom: 0.5rem;}
+.lst_dwlx .body li a{display: block;padding: 1.5rem 0;overflow: hidden; background:url(../img/wechat/i14.png) no-repeat 94% center / 1rem 1.75rem;}
+.lst_dwlx .body li .pic{float: left;margin-left: 2.6rem;}
+.lst_dwlx .body li .pic img{width: 7.6rem;height: 7.6rem;}
+.lst_dwlx .body li p{margin-left: 11.6rem;font-size: 1.4rem;color: #FFF;line-height: 7.6rem;}
+
+/*hawaste界面-20*/
+.lst_sczs .body{padding-top: 1.4rem;}
+.lst_sczs .body li{margin-bottom: 3rem;}
+.lst_sczs .body li .shd{height: 2.1rem;line-height: 2.1rem;border-left: 0.35rem solid #40bb6b;padding-left: 1.2rem;font-size: 1.3rem;}
+.lst_sczs .body li .sbd{height: 9.9rem; background-color: #eefbf4;margin-top: 1rem; text-align:center;}
+.lst_sczs .body li .sbd a img{margin-top:1.5rem; overflow:hidden; height: 7rem; }
+.lst_sczs .body li .sft{line-height: 1.5rem;margin-top: 1.2rem;font-size: 1.2rem;text-align: right;} 
+.lst_sczs .body li .sft a{padding-right: 2.1rem;margin-right: 1.6rem;color: #666; background:url(../img/wechat/i12.png) no-repeat right center / 1.5rem}
+.lst_sczs .body .uploadLicenceButton{padding:1.5rem 1.5rem 3rem;}
+.lst_sczs .body .uploadLicenceButton .btn_md{width:100%;}
+.lst_sczs .body .success{text-align:center;}
+.lst_sczs .body .success .text{font-size:1.3rem; padding:2rem 0;}
+
+
+/*hawaste界面-24*/
+.box_wfkh2{}
+.box_wfkh2 .head{padding-top: 1.25rem;background: #22a674;height: 11.5rem;text-align: center;}
+.box_wfkh2 .head p{border-color: #FFF;color: #FFF;}
+.box_wfkh2 .head p a{color: #FFF;}
+.box_wfkh2 .head p a.on{background: #FFF;color: #22a674;}
+.box_wfkh2 .head img{width: 92%;margin-top: 2.1rem;}
+.box_wfkh2 .body{padding-top: 0.4rem;}
+.box_wfkh2 .body li{margin-top: 0.5rem; background: #FFF;}
+.box_wfkh2 .body li a{overflow: hidden;display: block;padding: 1.5rem 0; background:url(../img/wechat/i8.png) no-repeat 92% center / 0.9rem 1.6rem}
+.box_wfkh2 .body li .pic{float: left;margin-left: 1.75rem;}
+.box_wfkh2 .body li .pic img{width: 6.2rem;height: 5.4rem;}
+.box_wfkh2 .body li p{margin-left: 180px;line-height: 5.4rem;font-size: 1.3rem;color: #666;}
+
+
+
+
+
+
